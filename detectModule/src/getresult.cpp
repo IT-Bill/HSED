@@ -1,4 +1,7 @@
 #include <getresult.hpp>
+
+extern int idx;
+
 double getULP(double x, double origin) {
 	mpfr_t mpfr_origin, mpfr_oracle, mp1;
 	mpfr_inits2(128, mpfr_origin, mpfr_oracle, mp1, (mpfr_ptr) 0);
@@ -11,6 +14,7 @@ double getULP(double x, double origin) {
 	mpfr_free_cache();
 	return ulp;
 }
+
 double getRelativeError(double x, double origin) {
 	mpfr_t mpfr_origin, mpfr_oracle, mpfr_relative, mpfr_absolute, mp1;
 	mpfr_inits2(128, mpfr_origin, mpfr_oracle, mpfr_relative, mpfr_absolute, mp1, (mpfr_ptr) 0);
@@ -28,17 +32,25 @@ double getRelativeError(double x, double origin) {
 }
 double getFloatToDoubleOfOrigin(const float &inputx) {
 	double x = (double)inputx;
-	return x;
+	gsl_sf_result gslres;
+	GSLFuncList[idx](x, &gslres);
+	return gslres.val;
 }
 double getDoubleOfOrigin(const double &inputx) {
 	double x = inputx;
-	return x;
+	gsl_sf_result gslres;
+	GSLFuncList[idx](x, &gslres);
+	return gslres.val;
 }
 double getFloatToDoubleOfOrigin2(const float &inputx) {
 	double x = (double)inputx;
-	return x;
+	gsl_sf_result gslres;
+	GSLFuncList[idx](x, &gslres);
+	return gslres.val;
 }
 double getDoubleOfOrigin2(const double &inputx) {
 	double x = inputx;
-	return x;
+	gsl_sf_result gslres;
+	GSLFuncList[idx](x, &gslres);
+	return gslres.val;
 }

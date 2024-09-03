@@ -12,10 +12,13 @@ typedef union {
     double d;
 } DL;
 
+int idx;
+
 int main(int argc, char *argv[]) {
-    if (argc == 3) {
-        double start = atof(argv[1]);
-        double end = atof(argv[2]);
+    if (argc == 4) {
+        idx = atoi(argv[1]);
+        double start = atof(argv[2]);
+        double end = atof(argv[3]);
         if (start > end) {
             cout << "start > end, input range error, you have to input start <= end" << endl;
             return 0;
