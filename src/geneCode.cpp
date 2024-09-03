@@ -91,6 +91,7 @@ int geneMpfrCode(const string exprStr, vector<string> vars)
     getMpfrParameterNumber(exprAst, mpfr_variables);
 
     ofs << "#include <getresult.hpp>\n"
+        // << "#include <gsl/gsl_sf.h>\n"
         << "double getULP" << "(";
     for (auto &var : vars)
     {
