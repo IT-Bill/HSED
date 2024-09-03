@@ -44,13 +44,9 @@ double getDoubleOfOrigin(const double &inputx) {
 }
 double getFloatToDoubleOfOrigin2(const float &inputx) {
 	double x = (double)inputx;
-	gsl_sf_result gslres;
-	GSLFuncList[idx](x, &gslres);
-	return gslres.val;
+	return x;
 }
 double getDoubleOfOrigin2(const double &inputx) {
 	double x = inputx;
-	gsl_sf_result gslres;
-	GSLFuncList[idx](x, &gslres);
-	return gslres.val;
+	return x;
 }
