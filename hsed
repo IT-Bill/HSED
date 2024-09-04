@@ -1,13 +1,117 @@
-#bin/bash
-strexpression="${1}"
-start=${2}
-end=${3}
-make
-bin/errordetect.exe "${strexpression}"
-echo '-------MPFR high-precision version code generation-------'
-cd detectModule
-make
-bin/errorDetect.exe ${start} ${end}
-cd ..
+# #bin/bash
+# strexpression="${1}"
+# start=${2}
+# end=${3}
+# make
+# bin/errordetect.exe "${strexpression}"
+# echo '-------MPFR high-precision version code generation-------'
+# cd detectModule
+# make
+# bin/errorDetect.exe ${start} ${end}
+# cd ..
 
 
+#!/bin/bash
+
+# Define the benchmark data
+expressions=(
+    "1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x"
+    "1.0 / (sqrt(x + 1.0) + sqrt(x))"
+    "(exp(x) - 1.0) / x"
+    "(exp(x) - 1.0) / log(exp(x))"
+    "exp(x) - 1.0"
+    "log(x + 1.0) - log(x)"
+    "1.0 / x - 1.0 / tan(x)"
+    "(1.0 - cos(x)) / (x * x)"
+    "exp(x) / (exp(x) - 1.0)"
+    "(x - sin(x)) / (x - tan(x))"
+    "exp(x) - 2.0 + exp(-x)"
+    "(4.0 * x) / (x / 1.11 + 1.0)"
+    "(4.0 * x * x) / (1 + x / 1.11 + x / 1.11)"
+    "log(exp(x) - 1.0)"
+    "x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0"
+    "((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0)"
+    "(1.0 - cos(x)) / (x * x)"
+    "(((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0"
+    "cbrt(x + 1) - cbrt(x)"
+    "((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0))"
+    "1.0/(x+1) - (1.0/x)"
+    "1.0/sqrt(x) - 1.0 / sqrt(x+1)"
+    "1.0 / tan(x + 1) - 1.0 / tan(x)"
+    "(1.0 - cos(x)) / sin(x)"
+    "sqrt(x + 1) - sqrt(x)"
+    "(x - 1) / (x * x - 1)"
+    "1.0 / (x + 1.0)"
+    "x / ( x + 1)"
+    "(0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x))"
+    "(-x * x * x) / 6.0"
+    "log(1 - x) / log(1 + x)"
+    "log((1 - x) / (1 + x))"
+)
+
+# Corresponding ranges for each expression
+ranges=(
+    "[0,1]"
+    "[1,1000]"
+    "[0.01,0.5]"
+    "[0.01,0.5]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.1,0.3]"
+    "[0.1,0.3]"
+    "[0.01,8]"
+    "[-1.57079632679,1.57079632679]"
+    "[0.1,0.5]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[0.01,100]"
+    "[1.00001,2]"
+    "[1.00001,2]"
+    "[1,999]"
+    "[-2,2]"
+    "[0,1]"
+    "[0.001,1]"
+    "[0.001,1]"
+)
+
+# Output file
+output="result.txt"
+
+# Loop through expressions and ranges
+for i in "${!expressions[@]}"; do
+    strexpression="${expressions[$i]}"
+    range="${ranges[$i]}"
+    
+    # Parse the range
+    start=$(echo $range | cut -d ',' -f 1 | tr -d '[]')
+    end=$(echo $range | cut -d ',' -f 2 | tr -d '[]')
+
+    # Run make command
+    make
+
+    # Run bin/errordetect.exe with the expression
+    bin/errordetect.exe "${strexpression}"
+
+    # Log output
+    # echo "-------MPFR high-precision version code generation-------" >> "$output"
+    # echo "Expression: ${strexpression}, Range: [${start}, ${end}]" >> "$output"
+
+    # Change directory and run errorDetect.exe
+    cd detectModule
+    make
+    bin/errorDetect.exe ${start} ${end} >> "../$output"
+    cd ..
+    
+done
+
+echo "All expressions processed and results saved in result.txt."

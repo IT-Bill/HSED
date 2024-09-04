@@ -1,0 +1,313 @@
+Detection interval: [0, 1]
+1047553
+preprocessing: x = 0.000058, maximumULP = 1.00, maximumRelative = 2.223768e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.94752350, maximumULP = 1.94, maximumRelative = 3.118967e-16
+
+double-precision layer: x = 0.9475234968115063, maximumULP = 1.92, maximumRelative = 3.087330e-16, BitsError = 1.5
+-------------------------------------------------------------------------------
+Detection interval: [1, 1000]
+10193
+preprocessing: x = 66.312500, maximumULP = 2.09, maximumRelative = 2.372345e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 258.42079455, maximumULP = 2.24, maximumRelative = 2.505171e-16
+
+double-precision layer: x = 258.4207811490169888, maximumULP = 2.43, maximumRelative = 2.717255e-16, BitsError = 1.8
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 0.5]
+5859
+preprocessing: x = 0.010033, maximumULP = 50.04, maximumRelative = 1.105489e-14
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.01026803, maximumULP = 48.30, maximumRelative = 1.067066e-14
+
+double-precision layer: x = 0.0102680349232534, maximumULP = 49.19, maximumRelative = 1.086586e-14, BitsError = 5.6
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 0.5]
+5859
+preprocessing: x = 0.133423, maximumULP = 1.11, maximumRelative = 2.297056e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.25032535, maximumULP = 1.29, maximumRelative = 2.514006e-16
+
+double-precision layer: x = 0.2503253254892638, maximumULP = 1.29, maximumRelative = 2.518783e-16, BitsError = 1.2
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.013939, maximumULP = 63.92, maximumRelative = 7.899643e-15
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.01284439, maximumULP = 49.78, maximumRelative = 6.680486e-15
+
+double-precision layer: x = 0.0128443935221748, maximumULP = 64.24, maximumRelative = 8.620102e-15, BitsError = 6.0
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 75.312500, maximumULP = 502.65, maximumRelative = 6.610440e-14
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 75.312500, maximumULP = 502.65, maximumRelative = 6.610440e-14
+
+float-precisoin layer: x = 75.3655242919921875, maximumULP = 509.03, maximumRelative = 6.698968e-14
+
+double-precision layer: x = 75.3655267663488928, maximumULP = 511.48, maximumRelative = 6.731213e-14, BitsError = 9.0
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.011086, maximumULP = 36851.81, maximumRelative = 4.325049e-12
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 0.011086, maximumULP = 36851.81, maximumRelative = 4.325049e-12
+
+float-precisoin layer: x = 0.0110857663676143, maximumULP = 47426.59, maximumRelative = 5.566012e-12
+
+double-precision layer: x = 0.0110857665074459, maximumULP = 47656.29, maximumRelative = 5.592970e-12, BitsError = 15.5
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
+
+float-precisoin layer: x = 6.2831854820251465, maximumULP = 18286142381194.62, maximumRelative = 2.328537e-03
+
+double-precision layer: x = 6.2831854831770970, maximumULP = 28494029909503.50, maximumRelative = 3.581055e-03, BitsError = 44.7
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.010033, maximumULP = 76.43, maximumRelative = 1.084182e-14
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.01284439, maximumULP = 36.51, maximumRelative = 6.621796e-15
+
+double-precision layer: x = 0.0128443930422960, maximumULP = 47.34, maximumRelative = 8.586375e-15, BitsError = 5.6
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.009995, maximumULP = 67782.65, maximumRelative = 7.525724e-12
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 0.009995, maximumULP = 67782.65, maximumRelative = 7.525724e-12
+
+float-precisoin layer: x = 0.0099983643740416, maximumULP = 69469.51, maximumRelative = 7.713012e-12
+
+double-precision layer: x = 0.0099983650650404, maximumULP = 70140.47, maximumRelative = 7.787507e-12, BitsError = 16.1
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.010536, maximumULP = 11641.31, maximumRelative = 1.421186e-12
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 0.010536, maximumULP = 11641.31, maximumRelative = 1.421186e-12
+
+float-precisoin layer: x = 0.0105394478887320, maximumULP = 12262.57, maximumRelative = 1.496105e-12
+
+double-precision layer: x = 0.0105394485936052, maximumULP = 12242.50, maximumRelative = 1.493656e-12, BitsError = 13.6
+-----------------------------------------------------------------------------------------
+Detection interval: [0.1, 0.3]
+1639
+preprocessing: x = 0.283203, maximumULP = 1.37, maximumRelative = 1.688561e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.13917957, maximumULP = 1.43, maximumRelative = 1.604033e-16
+
+double-precision layer: x = 0.1391795651431005, maximumULP = 1.48, maximumRelative = 1.660094e-16, BitsError = 1.3
+-------------------------------------------------------------------------------
+Detection interval: [0.1, 0.3]
+1639
+preprocessing: x = 0.201782, maximumULP = 1.97, maximumRelative = 2.284100e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.20387671, maximumULP = 2.71, maximumRelative = 3.096193e-16
+
+double-precision layer: x = 0.2038767065478421, maximumULP = 2.76, maximumRelative = 3.152213e-16, BitsError = 1.9
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 8]
+9955
+preprocessing: x = 0.693359, maximumULP = 3586.57, maximumRelative = 4.581859e-13
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 0.693359, maximumULP = 3586.57, maximumRelative = 4.581859e-13
+
+float-precisoin layer: x = 0.6933694481849670, maximumULP = 4085.45, maximumRelative = 4.982670e-13
+
+double-precision layer: x = 0.6933694532937099, maximumULP = 4094.68, maximumRelative = 4.993815e-13, BitsError = 12.0
+-----------------------------------------------------------------------------------------
+Detection interval[-1.5708, 1.5708]
+2096274
+preprocessing: x = -1.551758, maximumULP = 1.64, maximumRelative = 1.824171e-16
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = -1.51025771, maximumULP = 2.31, maximumRelative = 2.570362e-16
+
+double-precision layer: x = -1.5102576833889780, maximumULP = 2.46, maximumRelative = 2.740185e-16, BitsError = 1.8
+-----------------------------------------------------------------------------
+Detection interval: [0.1, 0.5]
+2459
+preprocessing: x = 0.168823, maximumULP = 2.04, maximumRelative = 3.070924e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.21511587, maximumULP = 2.23, maximumRelative = 2.756709e-16
+
+double-precision layer: x = 0.2151158667249352, maximumULP = 2.34, maximumRelative = 2.890819e-16, BitsError = 1.7
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
+
+float-precisoin layer: x = 6.2831854820251465, maximumULP = 18286142381194.62, maximumRelative = 2.328537e-03
+
+double-precision layer: x = 6.2831854831770970, maximumULP = 28494029909503.50, maximumRelative = 3.581055e-03, BitsError = 44.7
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 0.541992, maximumULP = 1243.11, maximumRelative = 1.470115e-13
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 0.541992, maximumULP = 1243.11, maximumRelative = 1.470115e-13
+
+float-precisoin layer: x = 0.5422114133834839, maximumULP = 123234885.03, maximumRelative = 1.534691e-08
+
+double-precision layer: x = 0.5422114197375080, maximumULP = 2739092982183.09, maximumRelative = 5.578738e-04, BitsError = 41.3
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 99.500000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 99.500000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
+
+float-precisoin layer: x = 99.5398864746093750, maximumULP = 1319.11, maximumRelative = 1.479380e-13
+
+double-precision layer: x = 99.5398938635647994, maximumULP = 1902.78, maximumRelative = 2.133963e-13, BitsError = 10.9
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 96.625000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 96.625000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
+
+float-precisoin layer: x = 96.6284103393554688, maximumULP = 7893.99, maximumRelative = 1.508013e-12
+
+double-precision layer: x = 96.6284179173983233, maximumULP = 8074.62, maximumRelative = 1.542520e-12, BitsError = 13.0
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 98.000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 98.000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
+
+float-precisoin layer: x = 98.0043945312500000, maximumULP = 127.29, maximumRelative = 1.673894e-14
+
+double-precision layer: x = 98.0044003236631909, maximumULP = 127.77, maximumRelative = 1.680124e-14, BitsError = 7.0
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 63.562500, maximumULP = 274.32, maximumRelative = 3.049916e-14
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 63.562500, maximumULP = 274.32, maximumRelative = 3.049916e-14
+
+float-precisoin layer: x = 63.5654907226562500, maximumULP = 364.50, maximumRelative = 4.052849e-14
+
+double-precision layer: x = 63.5654921427643487, maximumULP = 428.44, maximumRelative = 4.763743e-14, BitsError = 8.7
+-----------------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 52.281250, maximumULP = 1.85, maximumRelative = 2.215826e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 63.99346999, maximumULP = 46.81, maximumRelative = 9.412183e-15
+
+double-precision layer: x = 63.9934716099085747, maximumULP = 47.58, maximumRelative = 9.567065e-15, BitsError = 5.6
+-------------------------------------------------------------------------------
+Detection interval: [0.01, 100]
+13603
+preprocessing: x = 6.281250, maximumULP = 171937.74, maximumRelative = 1.926466e-11
+
+--------------------existing significant error, excute three-layer search----------------------
+half-precisoin layer: x = 6.281250, maximumULP = 171937.74, maximumRelative = 1.926466e-11
+
+float-precisoin layer: x = 6.2831854820251465, maximumULP = 15381099120073.77, maximumRelative = 2.328537e-03
+
+double-precision layer: x = 6.2831854831770970, maximumULP = 23810429721724.57, maximumRelative = 3.581055e-03, BitsError = 44.4
+-----------------------------------------------------------------------------------------
+Detection interval: [1.00001, 2]
+1025
+preprocessing: x = 1.001953, maximumULP = 3.88, maximumRelative = 5.197465e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 1.01477609, maximumULP = 5.33, maximumRelative = 7.184818e-16
+
+double-precision layer: x = 1.0147761047261972, maximumULP = 5.40, maximumRelative = 7.268844e-16, BitsError = 2.7
+-------------------------------------------------------------------------------
+Detection interval: [1.00001, 2]
+1025
+preprocessing: x = 1.666992, maximumULP = 0.50, maximumRelative = 7.399680e-17
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 1.00001163, maximumULP = 17053.13, maximumRelative = 1.893289e-12
+
+double-precision layer: x = 1.0000115650339847, maximumULP = 43233.51, maximumRelative = 4.799911e-12, BitsError = 15.4
+-------------------------------------------------------------------------------
+Detection interval: [1, 999]
+10191
+preprocessing: x = 1.666992, maximumULP = 0.50, maximumRelative = 7.399680e-17
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 511.92002129, maximumULP = 1.49, maximumRelative = 1.657740e-16
+
+double-precision layer: x = 511.9200153738244694, maximumULP = 1.50, maximumRelative = 1.664340e-16, BitsError = 1.3
+-------------------------------------------------------------------------------
+Detection interval[-2, 2]
+2097154
+preprocessing: x = 0.000000, maximumULP = 1.47, maximumRelative = 1.656252e-16
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 1.95430456, maximumULP = 0.50, maximumRelative = 8.391276e-17
+
+double-precision layer: x = 1.9543045650547646, maximumULP = 0.95, maximumRelative = 1.590656e-16, BitsError = 1.0
+-----------------------------------------------------------------------------
+Detection interval: [0, 1]
+1047553
+preprocessing: x = 0.264160, maximumULP = 1.34, maximumRelative = 1.490571e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.53370559, maximumULP = 1.47, maximumRelative = 1.669579e-16
+
+double-precision layer: x = 0.5337055582357422, maximumULP = 1.59, maximumRelative = 1.797086e-16, BitsError = 1.4
+-------------------------------------------------------------------------------
+Detection interval: [0.001, 1]
+10217
+preprocessing: x = 0.000999, maximumULP = 0.33, maximumRelative = 5.178408e-17
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.71657811, maximumULP = 1.90, maximumRelative = 2.151697e-16
+
+double-precision layer: x = 0.7165780821814498, maximumULP = 1.94, maximumRelative = 2.196070e-16, BitsError = 1.6
+-------------------------------------------------------------------------------
+Detection interval: [0.001, 1]
+10217
+preprocessing: x = 0.882812, maximumULP = 1.64, maximumRelative = 2.153815e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.00100173, maximumULP = 499.42, maximumRelative = 1.107823e-13
+
+double-precision layer: x = 0.0010017313766124, maximumULP = 501.01, maximumRelative = 1.111356e-13, BitsError = 9.0
+-------------------------------------------------------------------------------
+please input 3 or 5 numbers
+Detection interval: [0, 1]
+1047553
+preprocessing: x = 0.000058, maximumULP = 1.00, maximumRelative = 2.223768e-16
+
+---------------No significant error, excute two-layer search------------------
+float-precision layer: x = 0.94752350, maximumULP = 1.94, maximumRelative = 3.118967e-16
+
+double-precision layer: x = 0.9475234968115063, maximumULP = 1.92, maximumRelative = 3.087330e-16, BitsError = 1.5
+-------------------------------------------------------------------------------
