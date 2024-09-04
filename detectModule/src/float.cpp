@@ -21,6 +21,7 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
     dl_half_end.i = dl_half_end.i & 0x7FFFFC0000000000;
     cout << "Detection interval: [" << start << ", " << end << "]" << endl;
     double input_x = 0.0, ULP = 0.0, relative = 0.0;
+    // 0x400 0000 0000 = 1后面
     for (long int i = dl_half_start.i; i <= dl_half_end.i; i += 0x40000000000) {
         DL dl_input;
         dl_input.i = i;
