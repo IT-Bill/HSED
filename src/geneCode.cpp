@@ -114,14 +114,31 @@ int geneMpfrCode(const string exprStr, vector<string> vars)
     string variable_tmp = "";
     mpfrCodeGenerator(exprAst, mpfr_variables, mpfr_map, ofs, variable_tmp);
     ofs << "\n\tmpfr_set(mpfr_oracle, mp" << mpfr_variables << ", MPFR_RNDN);\n" 
-        << "\tmpfr_set_d(mpfr_origin, origin, MPFR_RNDN);\n"
-        << "\tdouble ulp = computeULPDiff(mpfr_origin, mpfr_oracle);\n";
+        << "\tmpfr_set_d(mpfr_origin, origin, MPFR_RNDN);\n";
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // Execute the two commands and capture their outputs
+
+    // ofs << "\tstd::string result1 = exec(\"./bin/input_for_fop 0 0.5\");\n";
+    ofs << "\tstd::string result2 = exec(\"./bin/input_for_fop_i 0 0.5\");\n";
+
+    // Convert the outputs to double
+    // ofs << "\tdouble value1 = std::stod(result1);\n";
+    ofs << "\tdouble value2 = std::stod(result2);\n";
+    // ofs << "\tprintf(\"\%f\\n\", value2);\n";
+
+    // ofs << "\tmpfr_set_d(mpfr_oracle, value1, MPFR_RNDN);\n";
+    ofs << "\tmpfr_set_d(mpfr_origin, value2, MPFR_RNDN);\n";
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    ofs << "\tdouble ulp = computeULPDiff(mpfr_origin, mpfr_oracle);\n";
     ofs << "\tmpfr_clears(mpfr_origin, mpfr_oracle, ";
     for (size_t i = 0; i < mpfr_variables; ++i) {
         ofs << "mp" << to_string(i + 1) << ", ";
     }
     ofs << "(mpfr_ptr) 0);\n";
     ofs << "\tmpfr_free_cache();\n";
+
+
     ofs << "\treturn ulp;\n"
         << "}\n";
     
@@ -158,6 +175,9 @@ int geneMpfrCode(const string exprStr, vector<string> vars)
     }
     ofs << "(mpfr_ptr) 0);\n";
     ofs << "\tmpfr_free_cache();\n";
+
+
+
     ofs << "\treturn relative;\n"
         << "}\n";
 

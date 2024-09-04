@@ -17,3 +17,5 @@ double computeULP(double y);
 float computeULPf(float y);
 double computeULPDiff(mpfr_t origin, mpfr_t oracle);
 float computeULPFDiff(mpfr_t origin, mpfr_t oracle);
+// Function to execute command and capture output
+std::string exec(const char* cmd);

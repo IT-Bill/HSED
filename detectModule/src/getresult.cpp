@@ -34,6 +34,9 @@ double getULP(double x, double origin) {
 
 	mpfr_set(mpfr_oracle, mp29, MPFR_RNDN);
 	mpfr_set_d(mpfr_origin, origin, MPFR_RNDN);
+	std::string result2 = exec("./bin/input_for_fop_i 0 0.5");
+	double value2 = std::stod(result2);
+	mpfr_set_d(mpfr_origin, value2, MPFR_RNDN);
 	double ulp = computeULPDiff(mpfr_origin, mpfr_oracle);
 	mpfr_clears(mpfr_origin, mpfr_oracle, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11, mp12, mp13, mp14, mp15, mp16, mp17, mp18, mp19, mp20, mp21, mp22, mp23, mp24, mp25, mp26, mp27, mp28, mp29, (mpfr_ptr) 0);
 	mpfr_free_cache();

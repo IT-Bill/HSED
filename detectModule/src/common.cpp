@@ -1,4 +1,6 @@
 #include "common.hpp"
+#include <memory>
+#include <array>
 
 int jiou(int x)
 {
@@ -132,5 +134,17 @@ float computeULPFDiff(mpfr_t origin, mpfr_t oracle) {
     double result = abs(mpfr_get_d(mp3, MPFR_RNDN));
     mpfr_clears(mp1, mp2, mp3, mp4, (mpfr_ptr) 0);
     mpfr_free_cache();
+    return result;
+}
+
+// Function to execute command and capture output
+std::string exec(const char* cmd) {
+    std::array<char, 128> buffer;
+    std::string result;
+    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
+    if (!pipe) throw std::runtime_error("popen() failed!");
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+        result += buffer.data();
+    }
     return result;
 }
