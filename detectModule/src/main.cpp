@@ -1,4 +1,5 @@
 #include "float.hpp"
+#include "getresult.hpp"
 
 using std::cin;
 using std::cout;
@@ -13,9 +14,11 @@ typedef union {
 } DL;
 
 int main(int argc, char *argv[]) {
-    if (argc == 3) {
-        double start = atof(argv[1]);
-        double end = atof(argv[2]);
+    if (argc == 4) {
+        double idx = atoi(argv[1]);
+        double start = atof(argv[2]);
+        double end = atof(argv[3]);
+        cout << idx << ". ";
         if (start > end) {
             cout << "start > end, input range error, you have to input start <= end" << endl;
             return 0;
@@ -26,6 +29,8 @@ int main(int argc, char *argv[]) {
         } else {//处理start和end都大于等于0的情况
             DoubleFunction::detectMethod2(start, end); 
         }
+        // double x = atof(argv[1]);
+        // cout << getULP(x, getDoubleOfOrigin(x)) << endl;
     } else if (argc == 5) { //双参算术表达式
         
     } else {

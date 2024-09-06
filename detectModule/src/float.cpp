@@ -27,8 +27,10 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
         DL dl_input;
         dl_input.i = i;
         double input_one = dl_input.d;
+        
         double origin = getDoubleOfOrigin(input_one);
         double ulp = getULP(input_one, origin);
+        // cout << input_one << endl;
         if (isinf(ulp)) {
             continue;
         } else if (isnan(ulp)) {

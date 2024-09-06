@@ -1,0 +1,95 @@
+-------MPFR high-precision version code generation-------
+Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, \nValue: 0.9511157870290083
+0.420701
+-------MPFR high-precision version code generation-------
+Expression: 1.0 / (sqrt(x + 1.0) + sqrt(x)), \nValue: 103.68859100345894
+-------MPFR high-precision version code generation-------
+Expression: (exp(x) - 1.0) / x, \nValue: 0.3342790007593655
+0.259521
+-------MPFR high-precision version code generation-------
+Expression: (exp(x) - 1.0) / log(exp(x)), \nValue: 0.36534634232531554
+0.265679
+-------MPFR high-precision version code generation-------
+Expression: exp(x) - 1.0, \nValue: 97.56112670897302
+0.256177
+-------MPFR high-precision version code generation-------
+Expression: log(x + 1.0) - log(x), \nValue: 88.31255340572132
+9.44706
+-------MPFR high-precision version code generation-------
+Expression: 1.0 / x - 1.0 / tan(x), \nValue: 0.9793465733528137
+0.642069
+-------MPFR high-precision version code generation-------
+Expression: (1.0 - cos(x)) / (x * x), \nValue: 0.8244193792338986
+0.403794
+-------MPFR high-precision version code generation-------
+Expression: exp(x) / (exp(x) - 1.0), \nValue: 2.4048254489914176
+0.373311
+-------MPFR high-precision version code generation-------
+Expression: (x - sin(x)) / (x - tan(x)), \nValue: 3.831706047056457
+0.786448
+-------MPFR high-precision version code generation-------
+Expression: exp(x) - 2.0 + exp(-x), \nValue: 0.8935769796371544
+1.55382
+-------MPFR high-precision version code generation-------
+Expression: (4.0 * x) / (x / 1.11 + 1.0), \nValue: 0.1664539873600014
+0.024689
+-------MPFR high-precision version code generation-------
+Expression: (4.0 * x * x) / (1 + x / 1.11 + x / 1.11), \nValue: 0.10962360352277824
+0.746877
+-------MPFR high-precision version code generation-------
+Expression: log(exp(x) - 1.0), \nValue: 2.970269441606363
+0.545494
+-------MPFR high-precision version code generation-------
+Expression: x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0, \nValue: 0.0007856072043063286
+0.317678
+-------MPFR high-precision version code generation-------
+Expression: ((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0), \nValue: 0.3441417515276926
+0.793881
+-------MPFR high-precision version code generation-------
+Expression: (1.0 - cos(x)) / (x * x), \nValue: 4.994081974033955
+0.433609
+-------MPFR high-precision version code generation-------
+Expression: (((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0, \nValue: 1.1206881999963783
+5.03525
+-------MPFR high-precision version code generation-------
+Expression: cbrt(x + 1) - cbrt(x), \nValue: 0.3644760251045227
+2.00735
+-------MPFR high-precision version code generation-------
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), \nValue: 0.15179780125604148
+0.406995
+-------MPFR high-precision version code generation-------
+Expression: 1.0/(x+1) - (1.0/x), \nValue: 0.009997479617586999
+0.101567
+-------MPFR high-precision version code generation-------
+Expression: 1.0/sqrt(x) - 1.0 / sqrt(x+1), \nValue: 45.531135559046504
+38.2363
+-------MPFR high-precision version code generation-------
+Expression: 1.0 / tan(x + 1) - 1.0 / tan(x), \nValue: 5.7634615898112465
+0.912555
+-------MPFR high-precision version code generation-------
+Expression: (1.0 - cos(x)) / sin(x), \nValue: 70.68583679192113
+0.50653
+-------MPFR high-precision version code generation-------
+Expression: sqrt(x + 1) - sqrt(x), \nValue: 56.53097915645881
+4.29838
+-------MPFR high-precision version code generation-------
+Expression: (x - 1) / (x * x - 1), \nValue: 1.7241344451904297
+0.37547
+-------MPFR high-precision version code generation-------
+Expression: 1.0 / (x + 1.0), \nValue: 0.9997580647470014
+0.134979
+-------MPFR high-precision version code generation-------
+Expression: x / ( x + 1), \nValue: 2.438684225081374
+0.048709
+-------MPFR high-precision version code generation-------
+Expression: (0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x)), \nValue: 0.25082916021350016
+0.265445
+-------MPFR high-precision version code generation-------
+Expression: (-x * x * x) / 6.0, \nValue: 0.9997032284731101
+0.155262
+-------MPFR high-precision version code generation-------
+Expression: log(1 - x) / log(1 + x), \nValue: 0.014895903877911704
+0.0163783
+-------MPFR high-precision version code generation-------
+Expression: log((1 - x) / (1 + x)), \nValue: 0.003309994935991548
+90.8562

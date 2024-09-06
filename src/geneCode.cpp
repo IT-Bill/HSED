@@ -119,15 +119,15 @@ int geneMpfrCode(const string exprStr, vector<string> vars)
     // Execute the two commands and capture their outputs
 
     // ofs << "\tstd::string result1 = exec(\"./bin/input_for_fop 0 0.5\");\n";
-    ofs << "\tstd::string result2 = exec(\"./bin/input_for_fop_i 0 0.5\");\n";
+    // ofs << "\tstd::string result2 = exec(\"./bin/input_for_fop_i 0 0.5\");\n";
 
     // Convert the outputs to double
     // ofs << "\tdouble value1 = std::stod(result1);\n";
-    ofs << "\tdouble value2 = std::stod(result2);\n";
+    // ofs << "\tdouble value2 = std::stod(result2);\n";
     // ofs << "\tprintf(\"\%f\\n\", value2);\n";
 
     // ofs << "\tmpfr_set_d(mpfr_oracle, value1, MPFR_RNDN);\n";
-    ofs << "\tmpfr_set_d(mpfr_origin, value2, MPFR_RNDN);\n";
+    // ofs << "\tmpfr_set_d(mpfr_origin, value2, MPFR_RNDN);\n";
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!
     ofs << "\tdouble ulp = computeULPDiff(mpfr_origin, mpfr_oracle);\n";

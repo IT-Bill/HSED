@@ -1,6 +1,7 @@
 #include "common.hpp"
 #include <memory>
 #include <array>
+#include <cmath>
 
 int jiou(int x)
 {
@@ -147,4 +148,12 @@ std::string exec(const char* cmd) {
         result += buffer.data();
     }
     return result;
+}
+
+double ErrULP(double fx, double fx_hat) {
+    // Calculate the ULP of fx
+    double ulp_fx = std::nextafter(fx, std::numeric_limits<double>::infinity()) - fx;
+    // Calculate the error based on ULP
+    double error_ulp = std::abs(fx - fx_hat) / ulp_fx;
+    return error_ulp;
 }
