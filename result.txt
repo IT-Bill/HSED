@@ -1,6 +1,6 @@
+idx: 0
 Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, Range: [0, 1]
 0. Detection interval: [0, 1]
-1047553
 preprocessing: x = 0.000058, maximumULP = 1.00, maximumRelative = 2.223768e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -8,9 +8,11 @@ float-precision layer: x = 0.94752350, maximumULP = 1.94, maximumRelative = 3.11
 
 double-precision layer: x = 0.9475234968115063, maximumULP = 1.92, maximumRelative = 3.087330e-16, BitsError = 1.5
 -------------------------------------------------------------------------------
+time: 4.284375742
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 1
 Expression: 1.0 / (sqrt(x + 1.0) + sqrt(x)), Range: [1, 1000]
 1. Detection interval: [1, 1000]
-10193
 preprocessing: x = 66.312500, maximumULP = 2.09, maximumRelative = 2.372345e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -18,9 +20,11 @@ float-precision layer: x = 258.42079455, maximumULP = 2.24, maximumRelative = 2.
 
 double-precision layer: x = 258.4207811490169888, maximumULP = 2.43, maximumRelative = 2.717255e-16, BitsError = 1.8
 -------------------------------------------------------------------------------
+time: .503928957
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 2
 Expression: (exp(x) - 1.0) / x, Range: [0.01, 0.5]
 2. Detection interval: [0.01, 0.5]
-5859
 preprocessing: x = 0.010033, maximumULP = 50.04, maximumRelative = 1.105489e-14
 
 ---------------No significant error, excute two-layer search------------------
@@ -28,9 +32,11 @@ float-precision layer: x = 0.01026803, maximumULP = 48.30, maximumRelative = 1.0
 
 double-precision layer: x = 0.0102680349232534, maximumULP = 49.19, maximumRelative = 1.086586e-14, BitsError = 5.6
 -------------------------------------------------------------------------------
+time: 2.252035207
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 3
 Expression: (exp(x) - 1.0) / log(exp(x)), Range: [0.01, 0.5]
 3. Detection interval: [0.01, 0.5]
-5859
 preprocessing: x = 0.133423, maximumULP = 1.11, maximumRelative = 2.297056e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -38,9 +44,11 @@ float-precision layer: x = 0.25032535, maximumULP = 1.29, maximumRelative = 2.51
 
 double-precision layer: x = 0.2503253254892638, maximumULP = 1.29, maximumRelative = 2.518783e-16, BitsError = 1.2
 -------------------------------------------------------------------------------
+time: 3.889552326
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 4
 Expression: exp(x) - 1.0, Range: [0.01, 100]
 4. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.013939, maximumULP = 63.92, maximumRelative = 7.899643e-15
 
 ---------------No significant error, excute two-layer search------------------
@@ -48,9 +56,11 @@ float-precision layer: x = 0.01284439, maximumULP = 49.78, maximumRelative = 6.6
 
 double-precision layer: x = 0.0128443935221748, maximumULP = 64.24, maximumRelative = 8.620102e-15, BitsError = 6.0
 -------------------------------------------------------------------------------
+time: 2.386080068
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 5
 Expression: log(x + 1.0) - log(x), Range: [0.01, 100]
 5. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 75.312500, maximumULP = 502.65, maximumRelative = 6.610440e-14
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -60,9 +70,11 @@ float-precisoin layer: x = 75.3655242919921875, maximumULP = 509.03, maximumRela
 
 double-precision layer: x = 75.3655267663488928, maximumULP = 511.48, maximumRelative = 6.731213e-14, BitsError = 9.0
 -----------------------------------------------------------------------------------------
+time: 2.109841127
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 6
 Expression: 1.0 / x - 1.0 / tan(x), Range: [0.01, 100]
 6. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.011086, maximumULP = 36851.81, maximumRelative = 4.325049e-12
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -72,9 +84,11 @@ float-precisoin layer: x = 0.0110857663676143, maximumULP = 47426.59, maximumRel
 
 double-precision layer: x = 0.0110857665074459, maximumULP = 47656.29, maximumRelative = 5.592970e-12, BitsError = 15.5
 -----------------------------------------------------------------------------------------
+time: .505112485
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 7
 Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
 7. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -84,9 +98,11 @@ float-precisoin layer: x = 6.2831854820251465, maximumULP = 18286142381194.62, m
 
 double-precision layer: x = 6.2831854831770970, maximumULP = 28494029909503.50, maximumRelative = 3.581055e-03, BitsError = 44.7
 -----------------------------------------------------------------------------------------
+time: .636453905
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 8
 Expression: exp(x) / (exp(x) - 1.0), Range: [0.01, 100]
 8. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.010033, maximumULP = 76.43, maximumRelative = 1.084182e-14
 
 ---------------No significant error, excute two-layer search------------------
@@ -94,9 +110,11 @@ float-precision layer: x = 0.01284439, maximumULP = 36.51, maximumRelative = 6.6
 
 double-precision layer: x = 0.0128443930422960, maximumULP = 47.34, maximumRelative = 8.586375e-15, BitsError = 5.6
 -------------------------------------------------------------------------------
+time: 2.737470631
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 9
 Expression: (x - sin(x)) / (x - tan(x)), Range: [0.01, 100]
 9. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.009995, maximumULP = 67782.65, maximumRelative = 7.525724e-12
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -106,9 +124,11 @@ float-precisoin layer: x = 0.0099983643740416, maximumULP = 69469.51, maximumRel
 
 double-precision layer: x = 0.0099983650650404, maximumULP = 70140.47, maximumRelative = 7.787507e-12, BitsError = 16.1
 -----------------------------------------------------------------------------------------
+time: .749264483
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 10
 Expression: exp(x) - 2.0 + exp(-x), Range: [0.01, 100]
 10. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.010536, maximumULP = 11641.31, maximumRelative = 1.421186e-12
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -118,9 +138,11 @@ float-precisoin layer: x = 0.0105394478887320, maximumULP = 12262.57, maximumRel
 
 double-precision layer: x = 0.0105394485936052, maximumULP = 12242.50, maximumRelative = 1.493656e-12, BitsError = 13.6
 -----------------------------------------------------------------------------------------
+time: 1.626474039
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 11
 Expression: (4.0 * x) / (x / 1.11 + 1.0), Range: [0.1, 0.3]
 11. Detection interval: [0.1, 0.3]
-1639
 preprocessing: x = 0.283203, maximumULP = 1.37, maximumRelative = 1.688561e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -128,9 +150,11 @@ float-precision layer: x = 0.13917957, maximumULP = 1.43, maximumRelative = 1.60
 
 double-precision layer: x = 0.1391795651431005, maximumULP = 1.48, maximumRelative = 1.660094e-16, BitsError = 1.3
 -------------------------------------------------------------------------------
+time: .381502393
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 12
 Expression: (4.0 * x * x) / (1 + x / 1.11 + x / 1.11), Range: [0.1, 0.3]
 12. Detection interval: [0.1, 0.3]
-1639
 preprocessing: x = 0.201782, maximumULP = 1.97, maximumRelative = 2.284100e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -138,9 +162,11 @@ float-precision layer: x = 0.20387671, maximumULP = 2.71, maximumRelative = 3.09
 
 double-precision layer: x = 0.2038767065478421, maximumULP = 2.76, maximumRelative = 3.152213e-16, BitsError = 1.9
 -------------------------------------------------------------------------------
+time: .497864551
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 13
 Expression: log(exp(x) - 1.0), Range: [0.01, 8]
 13. Detection interval: [0.01, 8]
-9955
 preprocessing: x = 0.693359, maximumULP = 3586.57, maximumRelative = 4.581859e-13
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -150,6 +176,9 @@ float-precisoin layer: x = 0.6933694481849670, maximumULP = 4085.45, maximumRela
 
 double-precision layer: x = 0.6933694532937099, maximumULP = 4094.68, maximumRelative = 4.993815e-13, BitsError = 12.0
 -----------------------------------------------------------------------------------------
+time: 2.711260478
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 14
 Expression: x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0, Range: [-1.57079632679, 1.57079632679]
 14. Detection interval[-1.5708, 1.5708]
 2096274
@@ -159,9 +188,11 @@ float-precision layer: x = -1.51025771, maximumULP = 2.31, maximumRelative = 2.5
 
 double-precision layer: x = -1.5102576833889780, maximumULP = 2.46, maximumRelative = 2.740185e-16, BitsError = 1.8
 -----------------------------------------------------------------------------
+time: 10.002053980
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 15
 Expression: ((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0), Range: [0.1, 0.5]
 15. Detection interval: [0.1, 0.5]
-2459
 preprocessing: x = 0.168823, maximumULP = 2.04, maximumRelative = 3.070924e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -169,9 +200,11 @@ float-precision layer: x = 0.21511587, maximumULP = 2.23, maximumRelative = 2.75
 
 double-precision layer: x = 0.2151158667249352, maximumULP = 2.34, maximumRelative = 2.890819e-16, BitsError = 1.7
 -------------------------------------------------------------------------------
+time: .611098599
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 16
 Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
 16. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 6.281250, maximumULP = 138181.19, maximumRelative = 1.926468e-11
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -181,9 +214,11 @@ float-precisoin layer: x = 6.2831854820251465, maximumULP = 18286142381194.62, m
 
 double-precision layer: x = 6.2831854831770970, maximumULP = 28494029909503.50, maximumRelative = 3.581055e-03, BitsError = 44.7
 -----------------------------------------------------------------------------------------
+time: .559505821
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 17
 Expression: (((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0, Range: [0.01, 100]
 17. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 0.541992, maximumULP = 1243.11, maximumRelative = 1.470115e-13
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -193,9 +228,11 @@ float-precisoin layer: x = 0.5422114133834839, maximumULP = 123234885.03, maximu
 
 double-precision layer: x = 0.5422114197375080, maximumULP = 2739092982183.09, maximumRelative = 5.578738e-04, BitsError = 41.3
 -----------------------------------------------------------------------------------------
+time: 2.183284714
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 18
 Expression: cbrt(x + 1) - cbrt(x), Range: [0.01, 100]
 18. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 99.500000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -205,9 +242,11 @@ float-precisoin layer: x = 99.5398864746093750, maximumULP = 1319.11, maximumRel
 
 double-precision layer: x = 99.5398938635647994, maximumULP = 1902.78, maximumRelative = 2.133963e-13, BitsError = 10.9
 -----------------------------------------------------------------------------------------
+time: .403374390
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
 Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
 19. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 96.625000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -217,9 +256,11 @@ float-precisoin layer: x = 96.6284103393554688, maximumULP = 7893.99, maximumRel
 
 double-precision layer: x = 96.6284179173983233, maximumULP = 8074.62, maximumRelative = 1.542520e-12, BitsError = 13.0
 -----------------------------------------------------------------------------------------
+time: .324076230
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 20
 Expression: 1.0/(x+1) - (1.0/x), Range: [0.01, 100]
 20. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 98.000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -229,9 +270,11 @@ float-precisoin layer: x = 98.0043945312500000, maximumULP = 127.29, maximumRela
 
 double-precision layer: x = 98.0044003236631909, maximumULP = 127.77, maximumRelative = 1.680124e-14, BitsError = 7.0
 -----------------------------------------------------------------------------------------
+time: .237957746
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 21
 Expression: 1.0/sqrt(x) - 1.0 / sqrt(x+1), Range: [0.01, 100]
 21. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 63.562500, maximumULP = 274.32, maximumRelative = 3.049916e-14
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -241,9 +284,11 @@ float-precisoin layer: x = 63.5654907226562500, maximumULP = 364.50, maximumRela
 
 double-precision layer: x = 63.5654921427643487, maximumULP = 428.44, maximumRelative = 4.763743e-14, BitsError = 8.7
 -----------------------------------------------------------------------------------------
+time: .301122769
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 22
 Expression: 1.0 / tan(x + 1) - 1.0 / tan(x), Range: [0.01, 100]
 22. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 52.281250, maximumULP = 1.85, maximumRelative = 2.215826e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -251,9 +296,11 @@ float-precision layer: x = 63.99346999, maximumULP = 46.81, maximumRelative = 9.
 
 double-precision layer: x = 63.9934716099085747, maximumULP = 47.58, maximumRelative = 9.567065e-15, BitsError = 5.6
 -------------------------------------------------------------------------------
+time: 2.255950437
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 23
 Expression: (1.0 - cos(x)) / sin(x), Range: [0.01, 100]
 23. Detection interval: [0.01, 100]
-13603
 preprocessing: x = 6.281250, maximumULP = 171937.74, maximumRelative = 1.926466e-11
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -263,9 +310,11 @@ float-precisoin layer: x = 6.2831854820251465, maximumULP = 15381099120073.77, m
 
 double-precision layer: x = 6.2831854831770970, maximumULP = 23810429721724.57, maximumRelative = 3.581055e-03, BitsError = 44.4
 -----------------------------------------------------------------------------------------
-Expression: sqrt(x + 1) - sqrt(x), Range: [0,  100]
+time: 1.329230718
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 24
+Expression: sqrt(x + 1) - sqrt(x), Range: [0, 100]
 24. Detection interval: [0, 100]
-1054273
 preprocessing: x = 84.750000, maximumULP = 250.40, maximumRelative = 3.208542e-14
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -275,9 +324,11 @@ float-precisoin layer: x = 84.7814407348632812, maximumULP = 254.20, maximumRela
 
 double-precision layer: x = 84.7814456539968972, maximumULP = 255.33, maximumRelative = 3.272244e-14, BitsError = 8.0
 -----------------------------------------------------------------------------------------
+time: 2.131151683
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 25
 Expression: (x - 1) / (x * x - 1), Range: [1.00001, 2]
 25. Detection interval: [1.00001, 2]
-1025
 preprocessing: x = 1.666992, maximumULP = 0.50, maximumRelative = 7.399680e-17
 
 ---------------No significant error, excute two-layer search------------------
@@ -285,9 +336,11 @@ float-precision layer: x = 1.00001163, maximumULP = 17053.13, maximumRelative = 
 
 double-precision layer: x = 1.0000115650339847, maximumULP = 43233.51, maximumRelative = 4.799911e-12, BitsError = 15.4
 -------------------------------------------------------------------------------
+time: .429357908
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 26
 Expression: 1.0 / (x + 1.0), Range: [1.00001, 2]
 26. Detection interval: [1.00001, 2]
-1025
 preprocessing: x = 1.666992, maximumULP = 0.50, maximumRelative = 7.399680e-17
 
 ---------------No significant error, excute two-layer search------------------
@@ -295,9 +348,11 @@ float-precision layer: x = 1.00368391, maximumULP = 1.49, maximumRelative = 1.65
 
 double-precision layer: x = 1.0036839093827405, maximumULP = 1.50, maximumRelative = 1.664311e-16, BitsError = 1.3
 -------------------------------------------------------------------------------
+time: .310706075
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 27
 Expression: x / ( x + 1), Range: [1, 999]
 27. Detection interval: [1, 999]
-10191
 preprocessing: x = 3.787109, maximumULP = 0.50, maximumRelative = 7.014044e-17
 
 ---------------No significant error, excute two-layer search------------------
@@ -305,6 +360,9 @@ float-precision layer: x = 127.04005466, maximumULP = 1.48, maximumRelative = 1.
 
 double-precision layer: x = 127.0400609612672866, maximumULP = 1.49, maximumRelative = 1.669353e-16, BitsError = 1.3
 -------------------------------------------------------------------------------
+time: .412581656
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 28
 Expression: (0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x)), Range: [-2, 2]
 28. Detection interval[-2, 2]
 2097154
@@ -314,9 +372,11 @@ float-precision layer: x = 1.99261982, maximumULP = 2.41, maximumRelative = 3.03
 
 double-precision layer: x = 1.9926198716434469, maximumULP = 2.97, maximumRelative = 3.733047e-16, BitsError = 2.0
 -----------------------------------------------------------------------------
+time: 4.933744213
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 29
 Expression: (-x * x * x) / 6.0, Range: [0, 1]
 29. Detection interval: [0, 1]
-1047553
 preprocessing: x = 0.000000, maximumULP = 0.58, maximumRelative = 8.165231e-03
 
 ---------------No significant error, excute two-layer search------------------
@@ -324,9 +384,11 @@ float-precision layer: x = 0.35896417, maximumULP = 1.89, maximumRelative = 2.12
 
 double-precision layer: x = 0.3589641674135399, maximumULP = 1.95, maximumRelative = 2.193487e-16, BitsError = 1.6
 -------------------------------------------------------------------------------
+time: 2.054405600
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 30
 Expression: log(1 - x) / log(1 + x), Range: [0.001, 1]
 30. Detection interval: [0.001, 1]
-10217
 preprocessing: x = 0.882812, maximumULP = 1.64, maximumRelative = 2.153815e-16
 
 ---------------No significant error, excute two-layer search------------------
@@ -334,9 +396,11 @@ float-precision layer: x = 0.00100173, maximumULP = 499.42, maximumRelative = 1.
 
 double-precision layer: x = 0.0010017313766124, maximumULP = 501.01, maximumRelative = 1.111356e-13, BitsError = 9.0
 -------------------------------------------------------------------------------
+time: 4.380466631
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 31
 Expression: log((1 - x) / (1 + x)), Range: [0.001, 1]
 31. Detection interval: [0.001, 1]
-10217
 preprocessing: x = 0.001817, maximumULP = 128.66, maximumRelative = 1.535662e-14
 
 --------------------existing significant error, excute three-layer search----------------------
@@ -346,3 +410,407 @@ float-precisoin layer: x = 0.0018170074326918, maximumULP = 128.88, maximumRelat
 
 double-precision layer: x = 0.0018170075271676, maximumULP = 383.33, maximumRelative = 4.574661e-14, BitsError = 8.6
 -----------------------------------------------------------------------------------------
+time: 1.947804740
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 0
+Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, Range: [0, 1]
+idx: 0
+Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, Range: [0, 1]
+time: 2.198428664
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 1
+Expression: 1.0 / (sqrt(x + 1.0) + sqrt(x)), Range: [1, 1000]
+time: 2.611532808
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 2
+Expression: (exp(x) - 1.0) / x, Range: [0.01, 0.5]
+time: 2.719061589
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 3
+Expression: (exp(x) - 1.0) / log(exp(x)), Range: [0.01, 0.5]
+time: 2.819760127
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 4
+Expression: exp(x) - 1.0, Range: [0.01, 100]
+time: 2.769736172
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 5
+Expression: log(x + 1.0) - log(x), Range: [0.01, 100]
+time: 2.982084534
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 6
+Expression: 1.0 / x - 1.0 / tan(x), Range: [0.01, 100]
+time: 2.955524482
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 7
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 3.048263621
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 8
+Expression: exp(x) / (exp(x) - 1.0), Range: [0.01, 100]
+time: 3.249999702
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 9
+Expression: (x - sin(x)) / (x - tan(x)), Range: [0.01, 100]
+time: 3.185170570
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 10
+Expression: exp(x) - 2.0 + exp(-x), Range: [0.01, 100]
+time: 3.292554386
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 11
+Expression: (4.0 * x) / (x / 1.11 + 1.0), Range: [0.1, 0.3]
+time: 3.230866504
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 12
+Expression: (4.0 * x * x) / (1 + x / 1.11 + x / 1.11), Range: [0.1, 0.3]
+time: 3.308506044
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 13
+Expression: log(exp(x) - 1.0), Range: [0.01, 8]
+time: 3.671034614
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 14
+Expression: x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0, Range: [-1.57079632679, 1.57079632679]
+time: 3.418817478
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 15
+Expression: ((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0), Range: [0.1, 0.5]
+time: 3.524571389
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 16
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 3.609816255
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 17
+Expression: (((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0, Range: [0.01, 100]
+time: 3.977380064
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 18
+Expression: cbrt(x + 1) - cbrt(x), Range: [0.01, 100]
+time: 3.822470280
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: 3.841030166
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 20
+Expression: 1.0/(x+1) - (1.0/x), Range: [0.01, 100]
+time: 3.885445552
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 21
+Expression: 1.0/sqrt(x) - 1.0 / sqrt(x+1), Range: [0.01, 100]
+time: 4.131449541
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 22
+Expression: 1.0 / tan(x + 1) - 1.0 / tan(x), Range: [0.01, 100]
+time: 4.268983050
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 23
+Expression: (1.0 - cos(x)) / sin(x), Range: [0.01, 100]
+time: 4.264206278
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 24
+Expression: sqrt(x + 1) - sqrt(x), Range: [0,  100]
+time: 4.360712442
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 25
+Expression: (x - 1) / (x * x - 1), Range: [1.00001, 2]
+time: 4.393297617
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 26
+Expression: 1.0 / (x + 1.0), Range: [1.00001, 2]
+time: 4.477126099
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 27
+Expression: x / ( x + 1), Range: [1, 999]
+time: 4.504925111
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 28
+Expression: (0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x)), Range: [-2, 2]
+time: 4.603806365
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 29
+Expression: (-x * x * x) / 6.0, Range: [0, 1]
+time: 4.627782011
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 30
+Expression: log(1 - x) / log(1 + x), Range: [0.001, 1]
+time: 4.868563285
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 31
+Expression: log((1 - x) / (1 + x)), Range: [0.001, 1]
+time: 4.911443563
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 0
+Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, Range: [0, 1]
+time: 2.148069216
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 1
+Expression: 1.0 / (sqrt(x + 1.0) + sqrt(x)), Range: [1, 1000]
+time: 2.600189222
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 2
+Expression: (exp(x) - 1.0) / x, Range: [0.01, 0.5]
+time: 2.139456590
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 3
+Expression: (exp(x) - 1.0) / log(exp(x)), Range: [0.01, 0.5]
+time: 3.082143960
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 4
+Expression: exp(x) - 1.0, Range: [0.01, 100]
+time: 2.961009636
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 5
+Expression: log(x + 1.0) - log(x), Range: [0.01, 100]
+time: 3.211166013
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 6
+Expression: 1.0 / x - 1.0 / tan(x), Range: [0.01, 100]
+time: 2.961823228
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 7
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 3.027651374
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 8
+Expression: exp(x) / (exp(x) - 1.0), Range: [0.01, 100]
+time: 3.130960808
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 9
+Expression: (x - sin(x)) / (x - tan(x)), Range: [0.01, 100]
+time: 2.489998602
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 10
+Expression: exp(x) - 2.0 + exp(-x), Range: [0.01, 100]
+time: 3.285871323
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 11
+Expression: (4.0 * x) / (x / 1.11 + 1.0), Range: [0.1, 0.3]
+time: 3.383609317
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 12
+Expression: (4.0 * x * x) / (1 + x / 1.11 + x / 1.11), Range: [0.1, 0.3]
+time: 3.441239637
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 13
+Expression: log(exp(x) - 1.0), Range: [0.01, 8]
+time: 3.921576352
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 14
+Expression: x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0, Range: [-1.57079632679, 1.57079632679]
+time: 3.498854668
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 15
+Expression: ((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0), Range: [0.1, 0.5]
+time: 3.640012778
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 16
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 3.570187710
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 17
+Expression: (((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0, Range: [0.01, 100]
+time: 4.197541773
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 18
+Expression: cbrt(x + 1) - cbrt(x), Range: [0.01, 100]
+time: 3.880066002
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: 3.947867924
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 20
+Expression: 1.0/(x+1) - (1.0/x), Range: [0.01, 100]
+time: 4.056513749
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 21
+Expression: 1.0/sqrt(x) - 1.0 / sqrt(x+1), Range: [0.01, 100]
+time: 4.258673806
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 22
+Expression: 1.0 / tan(x + 1) - 1.0 / tan(x), Range: [0.01, 100]
+time: 4.344018523
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 23
+Expression: (1.0 - cos(x)) / sin(x), Range: [0.01, 100]
+time: 4.391140702
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 24
+Expression: sqrt(x + 1) - sqrt(x), Range: [0,  100]
+time: 4.430508372
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 25
+Expression: (x - 1) / (x * x - 1), Range: [1.00001, 2]
+time: 4.284798844
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 26
+Expression: 1.0 / (x + 1.0), Range: [1.00001, 2]
+time: 4.337869954
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 27
+Expression: x / ( x + 1), Range: [1, 999]
+time: 4.450415506
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 28
+Expression: (0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x)), Range: [-2, 2]
+time: 4.573684409
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 29
+Expression: (-x * x * x) / 6.0, Range: [0, 1]
+time: 4.666146948
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 30
+Expression: log(1 - x) / log(1 + x), Range: [0.001, 1]
+time: 4.834111196
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 31
+Expression: log((1 - x) / (1 + x)), Range: [0.001, 1]
+time: 4.824140221
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: 1.561503364
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: 1.153035754
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 0
+Expression: 1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x, Range: [0, 1]
+time: 1.437938880
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 1
+Expression: 1.0 / (sqrt(x + 1.0) + sqrt(x)), Range: [1, 1000]
+time: 1.388372784
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 2
+Expression: (exp(x) - 1.0) / x, Range: [0.01, 0.5]
+time: 1.394292256
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 3
+Expression: (exp(x) - 1.0) / log(exp(x)), Range: [0.01, 0.5]
+time: 1.322393263
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 4
+Expression: exp(x) - 1.0, Range: [0.01, 100]
+time: 1.367982058
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 5
+Expression: log(x + 1.0) - log(x), Range: [0.01, 100]
+time: 1.013601667
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 6
+Expression: 1.0 / x - 1.0 / tan(x), Range: [0.01, 100]
+time: 1.484881847
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 7
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 1.614184404
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 8
+Expression: exp(x) / (exp(x) - 1.0), Range: [0.01, 100]
+time: 1.535432882
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 9
+Expression: (x - sin(x)) / (x - tan(x)), Range: [0.01, 100]
+time: 1.614032830
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 10
+Expression: exp(x) - 2.0 + exp(-x), Range: [0.01, 100]
+time: 1.806855952
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 11
+Expression: (4.0 * x) / (x / 1.11 + 1.0), Range: [0.1, 0.3]
+time: 1.665432966
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 12
+Expression: (4.0 * x * x) / (1 + x / 1.11 + x / 1.11), Range: [0.1, 0.3]
+time: 1.695686584
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 13
+Expression: log(exp(x) - 1.0), Range: [0.01, 8]
+time: 1.244404190
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 14
+Expression: x - (x * x * x) / 6.0 + (x * x * x * x * x) / 120.0 - (x * x * x * x * x * x * x) / 5040.0, Range: [-1.57079632679, 1.57079632679]
+time: 1.776710826
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 15
+Expression: ((35000000.0 + ((0.401 * (1000.0 / x)) * (1000.0 / x))) * (x - (1000.0 * 4.27e-5))) - ((1.3806503e-23 * 1000.0) * 300.0), Range: [0.1, 0.5]
+time: 1.735881600
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 16
+Expression: (1.0 - cos(x)) / (x * x), Range: [0.01, 100]
+time: 1.806705973
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 17
+Expression: (((x + 1.0) * log(x + 1.0)) - (x * log(x))) - 1.0, Range: [0.01, 100]
+time: 2.166309778
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 18
+Expression: cbrt(x + 1) - cbrt(x), Range: [0.01, 100]
+time: 2.032820465
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: 2.063871401
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 20
+Expression: 1.0/(x+1) - (1.0/x), Range: [0.01, 100]
+time: 2.070243153
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 21
+Expression: 1.0/sqrt(x) - 1.0 / sqrt(x+1), Range: [0.01, 100]
+time: 2.089250399
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 22
+Expression: 1.0 / tan(x + 1) - 1.0 / tan(x), Range: [0.01, 100]
+time: 2.385550570
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 23
+Expression: (1.0 - cos(x)) / sin(x), Range: [0.01, 100]
+time: 2.388948642
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 24
+Expression: sqrt(x + 1) - sqrt(x), Range: [0,  100]
+time: 2.516540274
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 25
+Expression: (x - 1) / (x * x - 1), Range: [1.00001, 2]
+time: 1.802057459
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 26
+Expression: 1.0 / (x + 1.0), Range: [1.00001, 2]
+time: 2.503786191
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 27
+Expression: x / ( x + 1), Range: [1, 999]
+time: 2.527735725
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 28
+Expression: (0.954929658551372 * x) - (0.12900613773279798 * ((x * x) * x)), Range: [-2, 2]
+time: 2.510379318
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 29
+Expression: (-x * x * x) / 6.0, Range: [0, 1]
+time: 2.498089464
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 30
+Expression: log(1 - x) / log(1 + x), Range: [0.001, 1]
+time: 2.722674576
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 31
+Expression: log((1 - x) / (1 + x)), Range: [0.001, 1]
+time: 2.746758601
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 19
+Expression: ((1.0 / (x + 1.0)) - (2.0 / x)) + (1.0 / (x - 1.0)), Range: [0.01, 100]
+time: .142515381
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+idx: 9
+Expression: (x - sin(x)) / (x - tan(x)), Range: [0.01, 100]
+time: .234872119
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

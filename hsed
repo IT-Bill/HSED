@@ -12,7 +12,6 @@
 
 
 #!/bin/bash
-
 # Define the benchmark data
 expressions=(
     "1.0 + 0.5 * x - 0.125 * x * x + 0.0625 * x * x * x - 0.0390625 * x * x * x * x"
@@ -83,6 +82,38 @@ ranges=(
     "[0,1]"
     "[0.001,1]"
     "[0.001,1]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
+    # "[0,100]"
 )
 
 values=(
@@ -150,9 +181,19 @@ values=(
 
 # Output file
 output="result.txt"
+# skip_values=(6 18 24)
 
 # Loop through expressions and ranges
 for i in "${!expressions[@]}"; do
+
+    # 检查当前值是否在需要跳过的值中
+    # if [ "$i" -ne 18 ] && [ "$i" -ne 6 ] && [ "$i" -ne 24 ]; then
+    #     continue
+    # fi
+    if [ "$i" -ne 9 ]; then
+        continue
+    fi
+
     strexpression="${expressions[$i]}"
     range="${ranges[$i]}"
     
@@ -166,6 +207,7 @@ for i in "${!expressions[@]}"; do
     # Run bin/errordetect.exe with the expression
     bin/errordetect.exe "${strexpression}"
 
+    echo "idx: ${i}" >> "$output"
     # Log output
     # echo "-------MPFR high-precision version code generation-------" >> "$output"
     echo "Expression: ${strexpression}, Range: [${start}, ${end}]" >> "$output"
@@ -173,9 +215,19 @@ for i in "${!expressions[@]}"; do
     # Change directory and run errorDetect.exe
     cd detectModule
     make
+    start_time=$(date +%s%N)
     bin/errorDetect.exe ${i} ${start} ${end} >> "../$output"
     cd ..
     
+    end_time=$(date +%s%N)
+    elapsed_time=$(echo "scale=9; ($end_time - $start_time) / 1000000000" | bc)
+    echo "time: ${elapsed_time}" >> "$output"
+    echo "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&" >> "$output"
 done
 
+# 结束时间
+
+# 计算总的运行时间
+
 echo "All expressions processed and results saved in result.txt."
+echo "Total execution time: ${total_time} seconds."

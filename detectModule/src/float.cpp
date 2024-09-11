@@ -22,6 +22,9 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
     cout << "Detection interval: [" << start << ", " << end << "]" << endl;
     double input_x = 0.0, ULP = 0.0, relative = 0.0;
     int cnt = 0;
+
+    
+
     for (long int i = dl_half_start.i; i <= dl_half_end.i; i += 0x40000000000) {
         cnt++;
         DL dl_input;
@@ -36,12 +39,14 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
         } else if (isnan(ulp)) {
             continue;
         }
+
+
         if (ULP < ulp) {
             ULP = ulp;
             input_x = input_one;
         }
     }
-    printf("%d\n", cnt);
+    // printf("%d\n", cnt);
     double origin_relative = getDoubleOfOrigin(input_x);
     relative = getRelativeError(input_x, origin_relative);
     printf("preprocessing: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
