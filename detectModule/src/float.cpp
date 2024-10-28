@@ -1,7 +1,9 @@
 #include "float.hpp"
 #include "getresult.hpp"
 #include <random>
+#include <utility>
 #include <vector>
+#include <chrono>
 
 typedef union {
     int i;
@@ -12,15 +14,18 @@ typedef union {
     double d;
 } DL;
 
-//第二种检测方法，操作double的尾数位和增加显著误差判断分支,其中start和end都大于等于0
-void DoubleFunction::detectMethod2(const double &start, const double &end) {
+extern std::vector<double> layer2Input;
+extern std::vector<double> layer3Input;
+bool layer2Flag;
+
+std::pair<double, double> DoubleFunction::processPositiveRangeLayer1(const double &start, const double &end) {
     DL dl_half_start, dl_half_end;
     dl_half_start.d = start;
     dl_half_start.i = dl_half_start.i & 0x7FFFFC0000000000;
     dl_half_end.d = end;
     dl_half_end.i = dl_half_end.i & 0x7FFFFC0000000000;
-    cout << "Detection interval: [" << start << ", " << end << "]" << endl;
-    double input_x = 0.0, ULP = 0.0, relative = 0.0;
+    // cout << "Detection interval: [" << start << ", " << end << "]" << endl;
+    double input_x = 0.0, ULP = 0.0;
     for (long int i = dl_half_start.i; i <= dl_half_end.i; i += 0x40000000000) {
         DL dl_input;
         dl_input.i = i;
@@ -37,8 +42,15 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
             input_x = input_one;
         }
     }
+    return std::make_pair(input_x, ULP);
+}
+
+//第二种检测方法，操作double的尾数位和增加显著误差判断分支,其中start和end都大于等于0
+void DoubleFunction::processPositiveRangeLayer23(double input_x, double ULP, double start, double end) {
+
     double origin_relative = getDoubleOfOrigin(input_x);
-    relative = getRelativeError(input_x, origin_relative);
+    double relative = getRelativeError(input_x, origin_relative);
+    double input_x2 = 0, ULP2 = 0;
     printf("preprocessing: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
     cout << endl;
     if (ULP <= 100) {
@@ -49,7 +61,9 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
         dl_float_start.i = dl_float_start.i & 0x7FFFFFFFE0000000;
         dl_float_end.d = end;
         dl_float_end.i = dl_float_end.i & 0x7FFFFFFFE0000000;
+        layer2Flag = true;
         vector<double> vec1 = random_test(dl_float_start.d, dl_float_end.d);
+        layer2Flag = false;
         input_x2 = vec1[0];
         ULP2 = vec1[1];
         origin_relative = getDoubleOfOrigin(input_x2);
@@ -67,13 +81,14 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
         origin_relative = getDoubleOfOrigin(input_x2);
         relative = getRelativeError(input_x2, origin_relative);
         printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x2, ULP2, relative, log2(ULP2 + 1));
-        cout << "-------------------------------------------------------------------------------" << endl;
     } else {
         cout << "--------------------existing significant error, excute three-layer search----------------------" << endl;
         origin_relative = getDoubleOfOrigin(input_x);
         relative = getRelativeError(input_x, origin_relative);
         printf("half-precisoin layer: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
         cout << endl;
+        // !==============================================
+        auto startTime = std::chrono::steady_clock::now();
         double input_second = input_x;
         DL dl_float_start, dl_float_end;
         dl_float_start.d = input_second;
@@ -89,10 +104,14 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
                 ULP = ulp;
                 input_x = input_two;
             }
+            layer2Input.emplace_back(dl_input.d);
         }
         origin_relative = getDoubleOfOrigin(input_x);
         relative = getRelativeError(input_x, origin_relative);
-        printf("float-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
+        auto finishTime = std::chrono::steady_clock::now();
+        std::chrono::duration<double> elapsedTime = finishTime - startTime;
+        printf("float-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, elapsedTime = %.6f", input_x, ULP, relative, elapsedTime.count());
+        // !==============================================
         cout << endl;
         DL dl_double_start, dl_double_end;
         dl_double_start.d = input_x;
@@ -103,16 +122,16 @@ void DoubleFunction::detectMethod2(const double &start, const double &end) {
         origin_relative = getDoubleOfOrigin(input_x);
         relative = getRelativeError(input_x, origin_relative);
         printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x, ULP, relative, log2(ULP + 1));
-        cout << "-----------------------------------------------------------------------------------------" << endl;
     }
 }
-//start和end都小于等于0的情况
-void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
+
+
+std::pair<double, double> DoubleFunction::processNegativeRangeLayer1(const double &start, const double &end) {
     DL dl_first_start, dl_first_end;
     dl_first_start.d = start, dl_first_end.d = end;
     dl_first_start.i = dl_first_start.i & 0xFFFFFC0000000000;
     dl_first_end.i = dl_first_end.i & 0xFFFFFC0000000000;
-    cout << "detection interval[" << start << ", " << end << "]" << endl;
+    // cout << "detection interval[" << start << ", " << end << "]" << endl;
     double input_x = 0.0, ULP = 0.0, relative = 0.0;
     for (long int i = dl_first_end.i; i <= dl_first_start.i; i += 0x40000000000) {
         DL dl_input;
@@ -126,8 +145,15 @@ void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
             input_x = input_one;
         }
     }
+    return std::make_pair(input_x, ULP);
+}
+
+//start和end都小于等于0的情况
+void DoubleFunction::processNegativeRangeLayer23(double input_x, double ULP, double start, double end) {
+
     double origin_relative = getDoubleOfOrigin(input_x);
-    relative = getRelativeError(input_x, origin_relative);
+    double relative = getRelativeError(input_x, origin_relative);
+    double input_x2 = 0, ULP2 = 0;
     printf("preprocessing: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
     if (ULP <= 100) {
         cout << "----------------No significant error, excute two-layer search-------------------" << endl;
@@ -137,7 +163,9 @@ void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
         dl_float_start.i = dl_float_start.i & 0xFFFFFFFFE0000000;
         dl_float_end.d = end;
         dl_float_end.i = dl_float_end.i & 0xFFFFFFFFE0000000;
+        layer2Flag = true;
         vector<double> vec1 = random_test(dl_float_start.d, dl_float_end.d);
+        layer2Flag = false;
         input_x2 = vec1[0];
         ULP2 = vec1[1];
 
@@ -148,17 +176,19 @@ void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
         dl_double_end.d = input_x2;
         dl_double_start.i = dl_double_start.i & 0xFFFFFFFFE0000000;
         dl_double_end.i = dl_double_end.i | 0x000000001FFFFFFF;
+
         vector<double> vec2 = random_test(dl_double_start.d, dl_double_end.d);
         input_x2 = vec2[0];
         ULP2 = vec2[1];
         origin_relative = getDoubleOfOrigin(input_x2);
         relative = getRelativeError(input_x2, origin_relative);
         printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x2, ULP2, relative, log2(ULP2 + 1));
-        cout << "--------------------------------------------------------------------------------" << endl;
     } else {
         cout << "-------------Existing significant error, excute three-layer search----------------" << endl;
         printf("half-precision layer: x = %.6lf, maximumULP = %.2lf\n", input_x, ULP);
         cout << endl;
+        // !=========================================================================
+        auto startTime = std::chrono::steady_clock::now();
         double input_second = input_x;
         DL dl_float_start, dl_float_end;
         dl_float_start.d = input_second;
@@ -174,10 +204,14 @@ void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
                 ULP = ulp;
                 input_x = input_two;
             }
+            layer2Input.emplace_back(dl_input.d);
         }
         origin_relative = getDoubleOfOrigin(input_x);
         relative = getRelativeError(input_x, origin_relative);
-        printf("float-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
+        auto finishTime = std::chrono::steady_clock::now();
+        std::chrono::duration<double> elapsedTime = finishTime - startTime;
+        printf("float-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, elapsedTime = %.6f", input_x, ULP, relative, elapsedTime.count());
+        // !=========================================================================
         cout << endl;
         DL dl_double_start, dl_double_end;
         dl_double_start.d = input_x;
@@ -188,16 +222,15 @@ void DoubleFunction::detectMethod2_1(const double &start, const double &end) {
         origin_relative = getDoubleOfOrigin(input_x);
         relative = getRelativeError(input_x, origin_relative);
         printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x, ULP, relative, log2(ULP + 1));
-        cout << "--------------------------------------------------------------------------------" << endl;
     }
 }
-//start和end跨越0的情况
-void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
+
+std::pair<double, double> DoubleFunction::processCrossZeroLayer1(const double &start, const double &end) {
     DL dl_first_start, dl_first_end;
     dl_first_start.d = start, dl_first_end.d = end;
     dl_first_start.i = dl_first_start.i & 0xFFFFFC0000000000;
     dl_first_end.i = dl_first_end.i & 0x7FFFFC0000000000;
-    cout << "Detection interval[" << start << ", " << end << "]" << endl;
+    // cout << "Detection interval[" << start << ", " << end << "]" << endl;
     double input_x = 0.0, ULP = 0.0, relative = 0.0, origin_relative = 0.0;
     double ULP2 = 0.0, input_x2 = 0.0;
     for (long int i = dl_first_start.i; i <= dl_first_end.i; i -= 0x40000000000) {
@@ -224,8 +257,15 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
             input_x = input_one;
         }
     }
-    origin_relative = getDoubleOfOrigin(input_x);
-    relative = getRelativeError(input_x, origin_relative);
+    return std::make_pair(input_x, ULP);
+}
+
+//start和end跨越0的情况
+void DoubleFunction::processCrossZeroLayer23(double input_x, double ULP, double start, double end) {
+
+    double origin_relative = getDoubleOfOrigin(input_x);
+    double relative = getRelativeError(input_x, origin_relative);
+    double input_x2 = 0, ULP2 = 0;
     printf("preprocessing: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
     if (ULP <= 100) {
         cout << "---------------No significant error, excute two-layer search-------------------" << endl;
@@ -235,7 +275,9 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
         dl_float_start.i = dl_float_start.i & 0xFFFFFFFFE0000000;
         dl_float_end.d = end;
         dl_float_end.i = dl_float_end.i & 0x7FFFFFFFE0000000;
+        layer2Flag = true;
         vector<double> vec1 = random_test(dl_float_start.d, dl_float_end.d);
+        layer2Flag = false;
         input_x2 = vec1[0];
         ULP2 = vec1[1];
         origin_relative = getDoubleOfOrigin(input_x2);
@@ -254,7 +296,6 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
             origin_relative = getDoubleOfOrigin(input_x2);
             relative = getRelativeError(input_x2, origin_relative);
             printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x2, ULP2, relative, log2(ULP2 + 1));
-            cout << "-----------------------------------------------------------------------------" << endl;
         } else {
             DL dl_double_start, dl_double_end;
             dl_double_start.d = input_x2;
@@ -267,13 +308,14 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
             origin_relative = getDoubleOfOrigin(input_x2);
             relative = getRelativeError(input_x2, origin_relative);
             printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x2, ULP2, relative, log2(ULP2 + 1));
-            cout << "-----------------------------------------------------------------------------" << endl;
         }
     } else {
         if (input_x2 <= 0) {
             cout << "----------------Existing significant error, excute three-layer search----------------" << endl;
             printf("half-precision layer: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
             cout << endl;
+            // !=========================================================================
+            auto startTime = std::chrono::steady_clock::now();
             double input_second = input_x;
             DL dl_float_start, dl_float_end;
             dl_float_start.d = input_second;
@@ -289,10 +331,14 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
                     ULP = ulp;
                     input_x = input_two;
                 }
+                layer2Input.emplace_back(dl_input.d);
             }
             origin_relative = getDoubleOfOrigin(input_x);
             relative = getRelativeError(input_x, origin_relative);
-            printf("float-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
+            auto finishTime = std::chrono::steady_clock::now();
+            std::chrono::duration<double> elapsedTime = finishTime - startTime;
+            printf("float-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, elapsedTime = %.6f", input_x, ULP, relative, elapsedTime.count());
+            // !=========================================================================
             cout << endl;
             DL dl_double_start, dl_double_end;
             dl_double_start.d = input_x;
@@ -303,11 +349,12 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
             origin_relative = getDoubleOfOrigin(input_x);
             relative = getRelativeError(input_x, origin_relative);
             printf("double-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x, ULP, relative, log2(ULP + 1));
-            cout << "-----------------------------------------------------------------------------" << endl;
         } else {    
             cout << "------------Existing significant error, excute three-layer search------------" << endl;
             printf("half-precision layer: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
             cout << endl;
+            // !=========================================================================
+            auto startTime = std::chrono::steady_clock::now();
             double input_second = input_x;
             DL dl_float_start, dl_float_end;
             dl_float_start.d = input_second;
@@ -323,10 +370,14 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
                     ULP = ulp;
                     input_x = input_two;
                 }
+                layer2Input.emplace_back(dl_input.d);
             }
             origin_relative = getDoubleOfOrigin(input_x);
             relative = getRelativeError(input_x, origin_relative);
-            printf("float-precision layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
+            auto finishTime = std::chrono::steady_clock::now();
+            std::chrono::duration<double> elapsedTime = finishTime - startTime;
+            printf("float-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, elapsedTime = %.6f", input_x, ULP, relative, elapsedTime.count());
+            // !=========================================================================
             cout << endl;
             DL dl_double_start, dl_double_end;
             dl_double_start.d = input_x;
@@ -338,7 +389,6 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
             origin_relative = getDoubleOfOrigin(input_x);
             relative = getRelativeError(input_x, origin_relative);
             printf("double-precisoin layer: x = %.16lf, maximumULP = %.2lf, maximumRelative = %e, BitsError = %.1lf\n", input_x, ULP, relative, log2(ULP + 1));
-            cout << "-----------------------------------------------------------------------------" << endl;
         }   
     }
 }
@@ -353,7 +403,7 @@ void DoubleFunction::detectMethod2_2(const double &start, const double &end) {
 vector<double> DoubleFunction::random_test(const double &start, const double &end) {
     vector<double> result(2);
     // srand(static_cast<unsigned>(time(nullptr)));//设置随机种子
-    //伪随机数
+    // 伪随机数
     double dbNumber = 0.0, origin = 0.0, ULP = 0.0;
     while (isinf(ULP) || isnan(ULP)) {
         dbNumber = start + static_cast<double> (rand()) / (static_cast<double> (RAND_MAX / (end - start)));
@@ -374,6 +424,13 @@ vector<double> DoubleFunction::random_test(const double &start, const double &en
             maximum = current;
             inputx = dbNumber2;
         }
+        if (layer2Flag) {
+            layer2Input.emplace_back(dbNumber2);
+        } else {
+            layer3Input.emplace_back(dbNumber2);
+        }
+        
+
     }
     result[0] = inputx;
     result[1] = maximum;

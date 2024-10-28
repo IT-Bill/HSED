@@ -115,6 +115,8 @@ int geneMpfrCode(const string exprStr, vector<string> vars)
     mpfrCodeGenerator(exprAst, mpfr_variables, mpfr_map, ofs, variable_tmp);
     ofs << "\n\tmpfr_set(mpfr_oracle, mp" << mpfr_variables << ", MPFR_RNDN);\n" 
         << "\tmpfr_set_d(mpfr_origin, origin, MPFR_RNDN);\n"
+        // << "\tdouble oracle_float = mpfr_get_d(mpfr_oracle, MPFR_RNDN);\n"
+        // << "\tstd::cout << std::setprecision(16) << oracle_float << std::endl;\n"
         << "\tdouble ulp = computeULPDiff(mpfr_origin, mpfr_oracle);\n";
     ofs << "\tmpfr_clears(mpfr_origin, mpfr_oracle, ";
     for (size_t i = 0; i < mpfr_variables; ++i) {
