@@ -15,6 +15,7 @@ typedef union {
 } DL;
 
 extern std::vector<double> layer2Input;
+extern std::vector<double> layer3Input;
 bool layer2Flag;
 
 std::pair<double, double> DoubleFunction::processPositiveRangeLayer1(const double &start, const double &end) {
@@ -425,7 +426,10 @@ vector<double> DoubleFunction::random_test(const double &start, const double &en
         }
         if (layer2Flag) {
             layer2Input.emplace_back(dbNumber2);
+        } else {
+            layer3Input.emplace_back(dbNumber2);
         }
+        
 
     }
     result[0] = inputx;

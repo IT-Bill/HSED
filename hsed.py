@@ -90,37 +90,49 @@ if __name__ == "__main__":
         print(f"Usage: python {sys.argv[0]} <range_file>")
         sys.exit(1)
 
+    
     with open(sys.argv[1], "r") as f:
-        json_data = json.load(f)
+        json_data = sort_key(json.load(f))
+    
+    # !=============================================================
+    # with open("/ICE/data/hsed/data_origin.json", "r") as f:
+    #     orig_data = sort_key(json.load(f))
 
+    # with open("result.txt", "w") as fp:
+    #     for i, func_data in json_data.items():
+    #         if not func_data["ranges"]:
+    #             continue
+
+    #         # ! Debug
+    #         # if i not in [0]:
+    #         #     continue
+
+    #         fp.write(f"Time: {datetime.now().strftime("%a %b %d %H:%M:%S %Y")}\n\n")
+    #         fp.write(f"Function Index: {i}\n")
+    #         fp.flush()
+    #         get_result_one_expression(i, expressions[i], sys.argv[1], fp)
+
+    # with open("result.txt", "r") as f:
+    #     result_text = f.read()
+
+    # import re
+
+    # pattern = r"Function Index: (\d+)\nSeleted Interval: \[([^\]]+)\]\n(?:.*\n)*?double-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+).*\nElapsed Time: ([\d.e-]+)"
+    # result = {
+    #     int(match[0]): {
+    #         "range": list(map(lambda x: float(x), match[1].split(", "))),
+    #         "x": float(match[2]),
+    #         "ulp": float(match[3]),
+    #         "time": float(match[4])
+    #     }
+    #     for match in re.findall(pattern, result_text)
+    # }
+
+    # print(result)
+    # !=============================================================
+    with open(sys.argv[1], "r") as f:
+        inputs_data = sort_key(json.load(f))
     with open("result.txt", "w") as fp:
-        for i, func_data in sort_key(json_data).items():
-            if not func_data["ranges"]:
-                continue
-
-            # ! Debug
-            # if i not in [7]:
-            #     continue
-
-            fp.write(f"Time: {datetime.now().strftime("%a %b %d %H:%M:%S %Y")}\n\n")
-            fp.write(f"Function Index: {i}\n")
-            fp.flush()
+        for i, func_input in inputs_data.items():
             get_result_one_expression(i, expressions[i], sys.argv[1], fp)
-
-    with open("result.txt", "r") as f:
-        result_text = f.read()
-
-    import re
-
-    pattern = r"Function Index: (\d+)\nSeleted Interval: \[([^\]]+)\]\n(?:.*\n)*?double-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+).*\nElapsed Time: ([\d.e-]+)"
-    result = {
-        int(match[0]): {
-            "range": list(map(lambda x: float(x), match[1].split(", "))),
-            "x": float(match[2]),
-            "ulp": float(match[3]),
-            "time": float(match[4])
-        }
-        for match in re.findall(pattern, result_text)
-    }
-
-    print(result)
+        
