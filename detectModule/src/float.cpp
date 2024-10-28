@@ -14,11 +14,8 @@ typedef union {
     double d;
 } DL;
 
-extern std::vector<double> layer2Input;
-extern std::vector<double> layer3Input;
-bool layer2Flag;
-
-std::pair<double, double> DoubleFunction::processPositiveRangeLayer1(const double &start, const double &end) {
+//第二种检测方法，操作double的尾数位和增加显著误差判断分支,其中start和end都大于等于0
+void DoubleFunction::detectMethod2(const double &start, const double &end) {
     DL dl_half_start, dl_half_end;
     dl_half_start.d = start;
     dl_half_start.i = dl_half_start.i & 0x7FFFFC0000000000;
@@ -42,12 +39,6 @@ std::pair<double, double> DoubleFunction::processPositiveRangeLayer1(const doubl
             input_x = input_one;
         }
     }
-    return std::make_pair(input_x, ULP);
-}
-
-//第二种检测方法，操作double的尾数位和增加显著误差判断分支,其中start和end都大于等于0
-void DoubleFunction::processPositiveRangeLayer23(double input_x, double ULP, double start, double end) {
-
     double origin_relative = getDoubleOfOrigin(input_x);
     double relative = getRelativeError(input_x, origin_relative);
     double input_x2 = 0, ULP2 = 0;
@@ -145,12 +136,6 @@ std::pair<double, double> DoubleFunction::processNegativeRangeLayer1(const doubl
             input_x = input_one;
         }
     }
-    return std::make_pair(input_x, ULP);
-}
-
-//start和end都小于等于0的情况
-void DoubleFunction::processNegativeRangeLayer23(double input_x, double ULP, double start, double end) {
-
     double origin_relative = getDoubleOfOrigin(input_x);
     double relative = getRelativeError(input_x, origin_relative);
     double input_x2 = 0, ULP2 = 0;
@@ -257,15 +242,8 @@ std::pair<double, double> DoubleFunction::processCrossZeroLayer1(const double &s
             input_x = input_one;
         }
     }
-    return std::make_pair(input_x, ULP);
-}
-
-//start和end跨越0的情况
-void DoubleFunction::processCrossZeroLayer23(double input_x, double ULP, double start, double end) {
-
-    double origin_relative = getDoubleOfOrigin(input_x);
-    double relative = getRelativeError(input_x, origin_relative);
-    double input_x2 = 0, ULP2 = 0;
+    origin_relative = getDoubleOfOrigin(input_x);
+    relative = getRelativeError(input_x, origin_relative);
     printf("preprocessing: x = %.6lf, maximumULP = %.2lf, maximumRelative = %e\n", input_x, ULP, relative);
     if (ULP <= 100) {
         cout << "---------------No significant error, excute two-layer search-------------------" << endl;
