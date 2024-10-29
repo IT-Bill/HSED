@@ -104,7 +104,7 @@ if __name__ == "__main__":
                 continue
 
             # ! Debug
-            if i not in [9]:
+            if i not in [2]:
                 continue
 
             fp.write(f"Time: {datetime.now().strftime("%a %b %d %H:%M:%S %Y")}\n\n")
@@ -117,13 +117,19 @@ if __name__ == "__main__":
 
     import re
 
-    pattern = r"Function Index: (\d+)\nSeleted Interval: \[([^\]]+)\]\n(?:.*\n)*?double-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+).*\nElapsed Time: ([\d.e-]+)"
+    pattern = r"Function Index: (\d+)\n(?:.*\n)*?float-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+)(?:.*\n)*?double-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+), maximumRelative = ([\d.eE+-]+)(?:.*\n)*?Layer1 Time: ([\d.e-]+)\nLayer2 Time: ([\d.e-]+)\nLayer3 Time: ([\d.e-]+)"
+    # pattern = r"Function Index: (\d+)\n(?:.*\n)*?float-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+)\n\ndouble-precision layer: x = ([\d.e-]+), maximumULP = ([\d.e-]+).*\nElapsed Time: ([\d.e-]+)"
+    
     result = {
         int(match[0]): {
-            "range": list(map(lambda x: float(x), match[1].split(", "))),
-            "x": float(match[2]),
-            "ulp": float(match[3]),
-            "time": float(match[4])
+            "x_2": float(match[1]),
+            "ulp_2": float(match[2]),
+            "x": float(match[3]),
+            "ulp": float(match[4]),
+            "rel_err": float(match[5]),
+            "time_1": float(match[6]),
+            "time_2": float(match[7]),
+            "time_3": float(match[8]),
         }
         for match in re.findall(pattern, result_text)
     }
