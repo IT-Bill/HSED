@@ -2,6 +2,7 @@
 #include "json.hh"
 #include "getresult.hpp"
 #include <algorithm>
+#include <type_traits>
 #include <utility>
 #include <fstream>
 #include <vector>
@@ -52,12 +53,12 @@ void saveJson(const std::string &path, json &data) {
 }
 
 int main(int argc, char *argv[]) {
-
+    
     if (argc == 3) {
         std::string funcIndex = argv[1];
         json jsonData = loadJson(argv[2]);
         auto &funcData = jsonData[funcIndex];
-
+        
         // !======================================================================================
         auto intervals = funcData["ranges"].get<std::vector<std::pair<double, double>>>();
         if (intervals.empty()) {
@@ -128,31 +129,44 @@ int main(int argc, char *argv[]) {
         std::cout << "Layer2 Time: " << layer2Time.count() << std::endl;
         std::cout << "Layer3 Time: " << layer3Time.count() << std::endl;
 
-        std::ofstream layer2InputFile("/HSED/layer2/" + funcIndex + ".json");
-        std::sort(layer2Input.begin(), layer2Input.end());
-        json layer2InputJson = layer2Input;
-        layer2InputFile << std::setw(2) << layer2InputJson << std::endl;
-        std::ofstream layer3InputFile("/HSED/layer3/" + funcIndex + ".json");
-        std::sort(layer3Input.begin(), layer3Input.end());
-        json layer3InputJson = layer3Input;
-        layer3InputFile << std::setw(2) << layer3InputJson << std::endl;
+        // std::ofstream layer2InputFile("/HSED/layer2/" + funcIndex + ".json");
+        // std::sort(layer2Input.begin(), layer2Input.end());
+        // json layer2InputJson = layer2Input;
+        // layer2InputFile << std::setw(2) << layer2InputJson << std::endl;
+        // std::ofstream layer3InputFile("/HSED/layer3/" + funcIndex + ".json");
+        // std::sort(layer3Input.begin(), layer3Input.end());
+        // json layer3InputJson = layer3Input;
+        // layer3InputFile << std::setw(2) << layer3InputJson << std::endl;
 
         // !======================================================================================
         
         // auto inputsList = funcData["inputs"].get<std::vector<std::vector<double>>>();
         // auto resultsList = funcData["results"].get<std::vector<std::vector<double>>>();
+        // auto successesList = funcData["successes"].get<std::vector<std::vector<int>>>();
         // std::vector<std::vector<double>> errorsList;
-        
         // for (int i = 0; i < inputsList.size(); i++) {
         //     auto inputs = inputsList[i];
         //     auto results = resultsList[i];
         //     std::vector<double> errors(inputs.size());
-        //     std::transform(inputs.begin(), inputs.end(), results.begin(), errors.begin(), 
-        //         [](double input, double result) { return getULP(input, result); });
+        //     // std::transform(inputs.begin(), inputs.end(), results.begin(), errors.begin(), 
+        //     //     [](double input, double result) { return getULP(input, result); });
             
+        //     for (int j = 0; j < inputs.size(); j++) {
+        //         auto input = inputs[j];
+        //         auto result = results[j];
+        //         auto success = successesList[i][j];
+
+        //         if (success == 1) {
+        //             errors[j] = getULP(input, result);
+        //         } else {
+        //             errors[j] = 0;
+        //         }
+        //     }
+
         //     errorsList.push_back(errors);
         // }
-        // funcData["hsed"] = errorsList;
+        // // funcData["errors_std"] = errorsList;
+        // funcData["errors"] = errorsList;  // !!!!
         // saveJson(argv[2], jsonData);
 
     } else {

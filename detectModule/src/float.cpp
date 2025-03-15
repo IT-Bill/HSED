@@ -208,7 +208,8 @@ void DoubleFunction::processNegativeRangeLayer23(double input_x, double ULP, dou
         DL dl_float_start, dl_float_end;
         dl_float_start.d = input_second;
         dl_float_end.i = dl_float_start.i | 0x000003FFE0000000;
-        for (long int i = dl_float_end.i; i <= dl_float_start.i; i += 0x20000000) {
+        // for (long int i = dl_float_end.i; i <= dl_float_start.i; i += 0x20000000) {
+        for (long int i = dl_float_start.i; i <= dl_float_end.i; i += 0x20000000) {
             DL dl_input;
             dl_input.i = i;
             double input_two = dl_input.d;
@@ -409,6 +410,7 @@ void DoubleFunction::processCrossZeroLayer23(double input_x, double ULP, double 
 }
 
 vector<double> DoubleFunction::random_test(const std::vector<std::pair<double, double>> &intervals) {
+    srand(static_cast<unsigned int>(3));
     double totalLength = 0;
     vector<double> result(2); // x, u
     for (auto &interval : intervals) {

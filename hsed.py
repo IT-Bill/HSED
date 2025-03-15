@@ -3,6 +3,7 @@ import sys
 import os
 import json
 from datetime import datetime
+import time
 
 
 sort_key = lambda d: dict(sorted({int(k): v for k, v in d.items()}.items()))
@@ -59,6 +60,7 @@ def get_result_one_interval(expr, start, end, fp):
 
 
 def get_result_one_expression(i, expr, interval_file, fp):
+    print("Function Index: ", i)
     # Run the first command and capture stderr if an error occurs
     subprocess.run(["bin/errordetect.exe", expr], check=True, stderr=subprocess.PIPE)
 
@@ -104,8 +106,8 @@ if __name__ == "__main__":
                 continue
 
             # ! Debug
-            if i not in [2]:
-                continue
+            # if i not in [14]:
+            #     continue
 
             fp.write(f"Time: {datetime.now().strftime("%a %b %d %H:%M:%S %Y")}\n\n")
             fp.write(f"Function Index: {i}\n")
@@ -139,6 +141,17 @@ if __name__ == "__main__":
     # with open(sys.argv[1], "r") as f:
     #     inputs_data = sort_key(json.load(f))
     # with open("result.txt", "w") as fp:
+    #     times = []
     #     for i, func_input in inputs_data.items():
+            
+    #         # if i not in [8]:
+    #         #     continue
+            
+    #         start = time.time()
     #         get_result_one_expression(i, expressions[i], sys.argv[1], fp)
-        
+    #         end = time.time()
+            
+    #         times.append(end - start)
+            
+    #     for t in times:
+    #         print(t)

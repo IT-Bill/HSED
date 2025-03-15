@@ -1,432 +1,368 @@
-Time: Tue Oct 29 01:03:18 2024
+Time: Mon Oct 28 11:25:03 2024
 
 Function Index: 0
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.000058, maximumULP = 1.00, maximumRelative = 2.223768e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 2.96116430, maximumULP = 269.89
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 2.96116430, maximumULP = 269.89, maximumRelative = 5.924202e-14
 
 double-precision layer: x = 2.9611644124779626, maximumULP = 1399.63, maximumRelative = 3.072477e-13, BitsError = 10.5
-Layer1 Time: 4.94324
-Layer2 Time: 0.249201
-Layer3 Time: 0.261369
-Time: Tue Oct 29 01:03:27 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:25:18 2024
 
 Function Index: 1
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.000000, maximumULP = 2.72, maximumRelative = 3.022741e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 66.80716731, maximumULP = 2.22
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 66.80716731, maximumULP = 2.22, maximumRelative = 2.531504e-16
 
 double-precision layer: x = 66.8071671692613904, maximumULP = 2.38, maximumRelative = 2.713925e-16, BitsError = 1.8
-Layer1 Time: 3.12571
-Layer2 Time: 0.155443
-Layer3 Time: 0.162299
-Time: Tue Oct 29 01:03:33 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:25:30 2024
 
 Function Index: 2
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000000000001, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000000000001, maximumULP = 9007199254737272.00, maximumRelative = 1.000000e+00, BitsError = 53.0
-Layer1 Time: 4.25008
-Layer2 Time: 1.6426e-05
-Layer3 Time: 0.748346
-Time: Tue Oct 29 01:03:42 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:25:47 2024
 
 Function Index: 3
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000508, maximumULP = 1.60, maximumRelative = 1.781633e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 36.77560973, maximumULP = 2.09
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 36.77560973, maximumULP = 2.09, maximumRelative = 2.561911e-16
 
 double-precision layer: x = 36.7756084128483138, maximumULP = 2.24, maximumRelative = 2.748185e-16, BitsError = 1.7
-Layer1 Time: 10.2725
-Layer2 Time: 1.29018
-Layer3 Time: 1.23468
-Time: Tue Oct 29 01:03:59 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:26:17 2024
 
 Function Index: 4
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000000000001, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000000000001, maximumULP = 4503599627369566.00, maximumRelative = 1.000000e+00, BitsError = 52.0
-Layer1 Time: 4.06839
-Layer2 Time: 1.6374e-05
-Layer3 Time: 0.74083
-Time: Tue Oct 29 01:04:07 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:26:31 2024
 
 Function Index: 5
+Seleted Interval: [-100, 100]
 preprocessing: x = 75.312500, maximumULP = 502.65, maximumRelative = 6.610440e-14
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 75.312500, maximumULP = 502.65, maximumRelative = 6.610440e-14
 
 float-precision layer: x = 75.3125000000000000, maximumULP = 502.65, maximumRelative = 6.610440e-14
 
 double-precision layer: x = 75.3125054463946242, maximumULP = 510.16, maximumRelative = 6.709264e-14, BitsError = 9.0
-Layer1 Time: 15.912
-Layer2 Time: 1.2547e-05
-Layer3 Time: 1.16235
-Time: Tue Oct 29 01:04:28 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:27:11 2024
 
 Function Index: 6
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 12557888804705622.00, maximumRelative = 2.301451e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 12557888804705622.00, maximumRelative = 2.301451e+00
 
 float-precision layer: x = -0.0000000135405571, maximumULP = 12557888804705622.00, maximumRelative = 2.301451e+00
 
 double-precision layer: x = -0.0000000135405571, maximumULP = 12557888804705002.00, maximumRelative = 2.301451e+00, BitsError = 53.5
-Layer1 Time: 2.06801
-Layer2 Time: 3.033e-06
-Layer3 Time: 0.276524
-Time: Tue Oct 29 01:04:33 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:27:21 2024
 
 Function Index: 7
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000105355866, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000105355874, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00, BitsError = 53.0
-Layer1 Time: 1.79392
-Layer2 Time: 2.156e-06
-Layer3 Time: 0.188683
-Time: Tue Oct 29 01:04:39 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:27:31 2024
 
 Function Index: 8
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 4494812115902456.50, maximumRelative = 4.995117e-01
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 4494812115902456.50, maximumRelative = 4.995117e-01
 
 float-precision layer: x = -0.0000000000000001, maximumULP = 4494812115902456.50, maximumRelative = 4.995117e-01
 
 double-precision layer: x = -0.0000000000000001, maximumULP = 4494812115900600.00, maximumRelative = 4.995117e-01, BitsError = 52.0
-Layer1 Time: 5.48551
-Layer2 Time: 1.9051e-05
-Layer3 Time: 0.847986
-Time: Tue Oct 29 01:04:49 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:27:51 2024
 
 Function Index: 9
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740996.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740996.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000309955794, maximumULP = 9007199254740996.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000309955824, maximumULP = 9007199254740996.00, maximumRelative = 1.000000e+00, BitsError = 53.0
-Layer1 Time: 3.46464
-Layer2 Time: 4.086e-06
-Layer3 Time: 0.365958
-Time: Tue Oct 29 01:04:57 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:28:05 2024
 
 Function Index: 10
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.000000, maximumULP = 162259276829213363391578010288128.00, maximumRelative = 3.595857e+16
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 0.000000, maximumULP = 162259276829213363391578010288128.00, maximumRelative = 3.595857e+16
 
 float-precision layer: x = 0.0000000000000001, maximumULP = 162259276829213363391578010288128.00, maximumRelative = 3.595857e+16
 
 double-precision layer: x = 0.0000000000000001, maximumULP = 162259276829213363391578010288128.00, maximumRelative = 3.595853e+16, BitsError = 107.0
-Layer1 Time: 5.17803
-Layer2 Time: 1.7758e-05
-Layer3 Time: 0.815456
-Time: Tue Oct 29 01:05:06 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:28:25 2024
 
 Function Index: 11
+Seleted Interval: [-100, 100]
 preprocessing: x = -1.110352, maximumULP = 1946.92, maximumRelative = 2.525440e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -1.110352, maximumULP = 1946.92, maximumRelative = 2.525440e-13
 
 float-precision layer: x = -1.1103515625000000, maximumULP = 1946.92, maximumRelative = 2.525440e-13
 
 double-precision layer: x = -1.1103515661335630, maximumULP = 2679.05, maximumRelative = 3.475156e-13, BitsError = 11.4
-Layer1 Time: 2.84792
-Layer2 Time: 1.156e-06
-Layer3 Time: 0.138234
-Time: Tue Oct 29 01:05:13 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:28:39 2024
 
 Function Index: 12
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.555176, maximumULP = 2161.43, maximumRelative = 2.525045e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.555176, maximumULP = 2161.43, maximumRelative = 2.525045e-13
 
 float-precision layer: x = -0.5551757812500000, maximumULP = 2161.43, maximumRelative = 2.525045e-13
 
 double-precision layer: x = -0.5551757820606683, maximumULP = 2975.18, maximumRelative = 3.475710e-13, BitsError = 11.5
-Layer1 Time: 3.24105
-Layer2 Time: 1.409e-06
-Layer3 Time: 0.18378
-Time: Tue Oct 29 01:05:21 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:28:54 2024
 
 Function Index: 13
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.000000, maximumULP = 97414421364317.39, maximumRelative = 1.884186e-02
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 0.000000, maximumULP = 97414421364317.39, maximumRelative = 1.884186e-02
 
 float-precision layer: x = 0.0000000000000001, maximumULP = 97414421364317.39, maximumRelative = 1.884186e-02
 
 double-precision layer: x = 0.0000000000000001, maximumULP = 97414421364288.36, maximumRelative = 1.884186e-02, BitsError = 46.5
-Layer1 Time: 5.23879
-Layer2 Time: 1.8381e-05
-Layer3 Time: 1.05015
-Time: Tue Oct 29 01:05:30 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:29:11 2024
 
 Function Index: 14
+Seleted Interval: [-100, 100]
 preprocessing: x = -3.078125, maximumULP = 4898.95, maximumRelative = 8.713174e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -3.078125, maximumULP = 4898.95, maximumRelative = 8.713174e-13
 
 float-precision layer: x = -3.0781250000000000, maximumULP = 4898.95, maximumRelative = 8.713174e-13
 
 double-precision layer: x = -3.0781250446497990, maximumULP = 11732.52, maximumRelative = 2.086903e-12, BitsError = 13.5
-Layer1 Time: 6.38159
-Layer2 Time: 3.422e-06
-Layer3 Time: 0.306199
-Time: Tue Oct 29 01:05:40 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:29:32 2024
 
 Function Index: 15
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.042694, maximumULP = 789.12, maximumRelative = 1.190962e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 0.042694, maximumULP = 789.12, maximumRelative = 1.190962e-13
 
 float-precision layer: x = 0.0426940917968750, maximumULP = 789.12, maximumRelative = 1.190962e-13
 
 double-precision layer: x = 0.0426940928624879, maximumULP = 792.56, maximumRelative = 1.196378e-13, BitsError = 9.6
-Layer1 Time: 4.34521
-Layer2 Time: 3.091e-06
-Layer3 Time: 0.217046
-Time: Tue Oct 29 01:05:49 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:29:48 2024
 
 Function Index: 16
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000105355866, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000105355874, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00, BitsError = 53.0
-Layer1 Time: 1.80242
-Layer2 Time: 2.154e-06
-Layer3 Time: 0.199613
-Time: Tue Oct 29 01:05:55 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:30:00 2024
 
 Function Index: 17
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.541992, maximumULP = 1243.11, maximumRelative = 1.470115e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 0.541992, maximumULP = 1243.11, maximumRelative = 1.470115e-13
 
 float-precision layer: x = 0.5419921875000000, maximumULP = 1243.11, maximumRelative = 1.470115e-13
 
 double-precision layer: x = 0.5419922261196813, maximumULP = 13203.43, maximumRelative = 1.561733e-12, BitsError = 13.7
-Layer1 Time: 17.0907
-Layer2 Time: 1.2458e-05
-Layer3 Time: 1.21974
-Time: Tue Oct 29 01:06:16 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:30:40 2024
 
 Function Index: 18
+Seleted Interval: [-100, 100]
 preprocessing: x = 99.500000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 99.500000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
 
 float-precision layer: x = 99.5000000000000000, maximumULP = 1190.27, maximumRelative = 1.334535e-13
 
 double-precision layer: x = 99.5000049097311319, maximumULP = 1931.70, maximumRelative = 2.165822e-13, BitsError = 10.9
-Layer1 Time: 4.21694
-Layer2 Time: 3.381e-06
-Layer3 Time: 0.229819
-Time: Tue Oct 29 01:06:24 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:30:53 2024
 
 Function Index: 19
+Seleted Interval: [-100, 100]
 preprocessing: x = -96.625000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -96.625000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
 
 float-precision layer: x = -96.6250000000000000, maximumULP = 6604.96, maximumRelative = 1.261631e-12
 
 double-precision layer: x = -96.6250039456598557, maximumULP = 8089.30, maximumRelative = 1.545159e-12, BitsError = 13.0
-Layer1 Time: 3.54727
-Layer2 Time: 1.357e-06
-Layer3 Time: 0.174431
-Time: Tue Oct 29 01:06:31 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:31:08 2024
 
 Function Index: 20
+Seleted Interval: [-100, 100]
 preprocessing: x = -99.000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -99.000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
 
 float-precision layer: x = -99.0000000000000000, maximumULP = 123.44, maximumRelative = 1.623007e-14
 
 double-precision layer: x = -99.0000074979813149, maximumULP = 127.84, maximumRelative = 1.680923e-14, BitsError = 7.0
-Layer1 Time: 2.84492
-Layer2 Time: 1.062e-06
-Layer3 Time: 0.139998
-Time: Tue Oct 29 01:06:39 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:31:19 2024
 
 Function Index: 21
+Seleted Interval: [-100, 100]
 preprocessing: x = 63.562500, maximumULP = 274.32, maximumRelative = 3.049916e-14
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 63.562500, maximumULP = 274.32, maximumRelative = 3.049916e-14
 
 float-precision layer: x = 63.5625000000000000, maximumULP = 274.32, maximumRelative = 3.049916e-14
 
 double-precision layer: x = 63.5625010667582089, maximumULP = 425.29, maximumRelative = 4.728428e-14, BitsError = 8.7
-Layer1 Time: 3.47109
-Layer2 Time: 1.328e-06
-Layer3 Time: 0.175031
-Time: Tue Oct 29 01:06:47 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:31:36 2024
 
 Function Index: 22
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000002, maximumULP = 1.90, maximumRelative = 2.167920e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 52.17239985, maximumULP = 1.95
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 52.17239985, maximumULP = 1.95, maximumRelative = 2.256312e-16
 
 double-precision layer: x = 52.1723985763949187, maximumULP = 2.07, maximumRelative = 2.401917e-16, BitsError = 1.6
-Layer1 Time: 6.36898
-Layer2 Time: 0.767316
-Layer3 Time: 0.736703
-Time: Tue Oct 29 01:06:57 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:31:57 2024
 
 Function Index: 23
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000074505806, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000074505815, maximumULP = 4503600164237956.00, maximumRelative = 1.000000e+00, BitsError = 52.0
-Layer1 Time: 1.83593
-Layer2 Time: 3.372e-06
-Layer3 Time: 0.283613
-Time: Tue Oct 29 01:07:04 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:32:11 2024
 
 Function Index: 24
+Seleted Interval: [-100, 100]
 preprocessing: x = 84.750000, maximumULP = 250.40, maximumRelative = 3.208542e-14
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = 84.750000, maximumULP = 250.40, maximumRelative = 3.208542e-14
 
 float-precision layer: x = 84.7500000000000000, maximumULP = 250.40, maximumRelative = 3.208542e-14
 
 double-precision layer: x = 84.7500051484104233, maximumULP = 255.02, maximumRelative = 3.267624e-14, BitsError = 8.0
-Layer1 Time: 2.87494
-Layer2 Time: 1.083e-06
-Layer3 Time: 0.143747
-Time: Tue Oct 29 01:07:11 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:32:22 2024
 
 Function Index: 25
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 1.00, maximumRelative = 1.109681e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = -0.99998261, maximumULP = 8904.07
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = -0.99998261, maximumULP = 8904.07, maximumRelative = 1.126691e-12
 
 double-precision layer: x = -0.9999826550467706, maximumULP = 12675.92, maximumRelative = 1.599715e-12, BitsError = 13.6
-Layer1 Time: 2.65232
-Layer2 Time: 0.139655
-Layer3 Time: 0.133445
-Time: Tue Oct 29 01:07:18 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:32:35 2024
 
 Function Index: 26
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 1.50, maximumRelative = 1.664792e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 37.34373103, maximumULP = 0.50
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 37.34373103, maximumULP = 0.50, maximumRelative = 6.651571e-17
 
 double-precision layer: x = 37.3437338289994969, maximumULP = 0.50, maximumRelative = 6.651557e-17, BitsError = 0.6
-Layer1 Time: 2.15712
-Layer2 Time: 0.114915
-Layer3 Time: 0.112531
-Time: Tue Oct 29 01:07:23 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:32:49 2024
 
 Function Index: 27
+Seleted Interval: [-100, 100]
 preprocessing: x = 0.000000, maximumULP = 1.47, maximumRelative = 1.656252e-16
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = -4.42773714, maximumULP = 0.50
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = -4.42773714, maximumULP = 0.50, maximumRelative = 8.594721e-17
 
 double-precision layer: x = -4.4277368457189086, maximumULP = 0.50, maximumRelative = 8.594571e-17, BitsError = 0.6
-Layer1 Time: 2.30802
-Layer2 Time: 0.11623
-Layer3 Time: 0.114509
-Time: Tue Oct 29 01:07:30 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:33:00 2024
 
 Function Index: 28
+Seleted Interval: [-100, 100]
 preprocessing: x = -2.720703, maximumULP = 121171.88, maximumRelative = 2.635199e-11
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -2.720703, maximumULP = 121171.88, maximumRelative = 2.635199e-11
 
 float-precision layer: x = -2.7207031250000000, maximumULP = 121171.88, maximumRelative = 2.635199e-11
 
 double-precision layer: x = -2.7207032960808482, maximumULP = 478793.33, maximumRelative = 9.993433e-11, BitsError = 18.9
-Layer1 Time: 3.05286
-Layer2 Time: 1.074e-06
-Layer3 Time: 0.148751
-Time: Tue Oct 29 01:07:37 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:33:14 2024
 
 Function Index: 29
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 0.58, maximumRelative = 8.165231e-03
-
-----------------No significant error, excute two-layer search-------------------
-float-precision layer: x = 23.05040850, maximumULP = 1.94
+---------------No significant error, excute two-layer search-------------------
+float-precision layer: x = 23.05040850, maximumULP = 1.94, maximumRelative = 2.158646e-16
 
 double-precision layer: x = 23.0504089380583395, maximumULP = 1.95, maximumRelative = 2.172468e-16, BitsError = 1.6
-Layer1 Time: 2.27837
-Layer2 Time: 0.141361
-Layer3 Time: 0.135953
-Time: Tue Oct 29 01:07:44 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:33:25 2024
 
 Function Index: 30
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740991.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740991.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000000000002, maximumULP = 9007199254740991.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000000000002, maximumULP = 9007199254740991.00, maximumRelative = 1.000000e+00, BitsError = 53.0
-Layer1 Time: 10.3062
-Layer2 Time: 3.1968e-05
-Layer3 Time: 2.85511
-Time: Tue Oct 29 01:07:59 2024
+-----------------------------------------------------------------------------
+Time: Mon Oct 28 11:33:56 2024
 
 Function Index: 31
+Seleted Interval: [-100, 100]
 preprocessing: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
-
 ----------------Existing significant error, excute three-layer search----------------
 half-precision layer: x = -0.000000, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 float-precision layer: x = -0.0000000000000001, maximumULP = 9007199254740992.00, maximumRelative = 1.000000e+00
 
 double-precision layer: x = -0.0000000000000001, maximumULP = 4503599627369565.00, maximumRelative = 1.000000e+00, BitsError = 52.0
-Layer1 Time: 7.34154
-Layer2 Time: 2.6572e-05
-Layer3 Time: 2.26273
+-----------------------------------------------------------------------------
