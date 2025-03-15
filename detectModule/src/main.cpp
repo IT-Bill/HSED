@@ -129,15 +129,6 @@ int main(int argc, char *argv[]) {
         std::cout << "Layer2 Time: " << layer2Time.count() << std::endl;
         std::cout << "Layer3 Time: " << layer3Time.count() << std::endl;
 
-        // std::ofstream layer2InputFile("/HSED/layer2/" + funcIndex + ".json");
-        // std::sort(layer2Input.begin(), layer2Input.end());
-        // json layer2InputJson = layer2Input;
-        // layer2InputFile << std::setw(2) << layer2InputJson << std::endl;
-        // std::ofstream layer3InputFile("/HSED/layer3/" + funcIndex + ".json");
-        // std::sort(layer3Input.begin(), layer3Input.end());
-        // json layer3InputJson = layer3Input;
-        // layer3InputFile << std::setw(2) << layer3InputJson << std::endl;
-
         // !======================================================================================
         
         // auto inputsList = funcData["inputs"].get<std::vector<std::vector<double>>>();
@@ -168,6 +159,8 @@ int main(int argc, char *argv[]) {
         // // funcData["errors_std"] = errorsList;
         // funcData["errors"] = errorsList;  // !!!!
         // saveJson(argv[2], jsonData);
+
+        // !======================================================================================
 
     } else {
         cout << "please input 3 or 5 numbers" << endl;
